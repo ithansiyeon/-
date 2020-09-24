@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        /* float: 기존 출력 정책을 벗어나, 기존의 위치에 속한 라인의 가장 좌측(우측)으로 이동한다. */
+        #pic{
+            float: right;
+        }
+        #notice{
+            border-bottom: 1px dashed gray;
+        }
+
+        #notice small{
+            float:right;
+            margin-top:6px;
+        }
+
+        .box{
+            border: 1px solid black;
+            width: 150px;
+            height: 150px;
+            float:left;
+        }
+        /* inline block */
+        #box1 {background-color:  red;}
+        #box2 {background-color: orange;}
+        #box3 {background-color:  yellow;}
+        #box4 {background-color:  green;}
+        #box5 {background-color:  blue;}
+       
+    </style>
+<body>
+    <h1>대표 인사</h1>
+
+    <p><img src = "../images/man_02.png" id = "pic">
+    안녕하세요. 홍길동입니다. 안녕하세요. 홍길동입니다. 안녕하세요. 홍길동입니다. 안녕하세요. 홍길동입니다. 안녕하세요. 홍길동입니다. 안녕하세요. 홍길동입니다. 안녕하세요. 홍길동입니다. 안녕하세요. 홍길동입니다. 안녕하세요. 홍길동입니다. 안녕하세요. 홍길동입니다. 안녕하세요. 홍길동입니다. 안녕하세요. 홍길동입니다. 안녕하세요. <b style="float: left; color:red;">아무개</b> 홍길동입니다. 안녕하세요. 홍길동입니다. 안녕하세요. 홍길동입니다. 안녕하세요. 홍길동입니다. 안녕하세요. 홍길동입니다. 안녕하세요. 홍길동입니다. 안녕하세요. 홍길동입니다. 안녕하세요. 홍길동입니다. 안녕하세요. 홍길동입니다. 안녕하세요. 홍길동입니다. 안녕하세요. 홍길동입니다. 안녕하세요. 홍길동입니다. 안녕하세요. 홍길동입니다. 안녕하세요. 홍길동입니다.
+    </p>
+    
+    <hr>
+
+    <h2 id = "notice">공지사항<small>한독빌딩 임직원</small></h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum soluta ipsum dolores deserunt voluptatem! Impedit error quis, accusantium accusamus porro tenetur id eligendi veniam dignissimos labore quasi voluptatum dicta illo. Fuga nobis sapiente, autem ut, excepturi eum maiores sunt eveniet perspiciatis inventore odit delectus dicta numquam facere? Ullam sapiente aliquid accusantium, nostrum consectetur debitis magni laboriosam alias illum iste labore unde, numquam quam. Iusto fuga voluptatum quos ad eos reprehenderit possimus, corrupti quaerat numquam eaque illo sit esse! Nobis cum eum est, eos similique corporis eaque voluptates nam incidunt nostrum expedita porro odio deleniti consequatur quaerat? Eum, exercitationem! Et, mollitia.</p>
+
+    <hr>
+
+    
+    <div id="box1" class="box">상자1</div>
+	<div id="box2" class="box">상자2</div>
+	<div id="box3" class="box">상자3</div>
+	<div id="box4" class="box">상자4</div>
+    <div id="box5" class="box">상자5</div>
+    <hr>
+
+    <div style = "clear:both">추가 내용입니다.</div>
+    나머지...
+
+</body>
+</html>

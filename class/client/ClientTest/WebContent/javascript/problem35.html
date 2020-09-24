@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cat {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            transition: all;
+        }
+
+        div #btn1 {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            display: block;
+            margin-bottom: 182px;
+            font-variant: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+    <input type="button" value="시작" id="btn1" style="font-variant: bold; display: block; margin-bottom: 182px; left: 290px; top: 182px;">
+    <img src="../images/catty01.png" id="cat" style="left: 311px; top: 182px;">
+    </div>
+
+    <script>
+        var cat = document.getElementById("cat");
+        var btn1 = document.getElementById("btn1");
+        var listx = [];
+        var listy = [];
+        var timer = 0;
+
+       btn1.onclick = function () {
+           if(timer == 0) {
+            timer = setInterval(function () {
+                    cat.style.transitionDuration = 0.1 + "s";
+                    cat.style.left = listx.shift()+"px";
+                    cat.style.top = listy.shift()+"px";
+                    // console.log(listx);
+                    // console.log(listy);
+                // }
+            }, 100);
+           } else if(listx.length==0) {
+               clearInterval(timer);
+               timer = 0;
+           }
+        };
+
+        // btn1.onclick = function()
+            window.onmousemove = function () {
+                if (event.ctrlKey) {
+                    listx.push(event.clientX-64);
+                    listy.push(event.clientY-64);
+                }
+
+            };
+
+
+    </script>
+</body>
+
+</html>

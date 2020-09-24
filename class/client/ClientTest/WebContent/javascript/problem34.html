@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cat {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            transition: all linear;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="../images/catty01.png" id="cat" style="left: 393px; top: 391px">
+    </div>
+    <script>
+        
+        var oldX = 0;
+        var oldY = 0;
+
+        var newX = 0; // 현재 선택된 동물 
+        var newY = 0;
+        var cat = document.getElementById("cat");
+
+        window.onmousedown = function () {
+              
+                 newX = event.clientX - 50 ;
+                 newY = event.clientY - 50 ;
+
+                //  oldX = img.style.left;
+                //  oldY = img.style.right;
+
+                 oldX = event.clientX;
+                 oldY = event.clientY;
+
+                newX = event.clientX-50;
+                newY = event.clientY-50;
+
+                var distance = Math.sqrt((newX-oldX) * (newX-oldX)  + (newY-oldY) * (newY-oldY));
+                cat.style.transitionDuration = distance / 1000 +"s";
+                // console.log(distance);
+                cat.style.left = newX-50+"px";
+                cat.style.top = newY+50+"px";
+
+                //질문22: problem33에서 linear만 붙이는 줄 알았는데 distance를 피타고라스 써어 한게 이해가 안되고 
+
+                // console.log(newX);
+                // console.log(newY);
+
+              
+            };
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            선택자
+            2. ID 선택자
+                - 태그에 명시된 id 속성을 참조하는 선택자 
+                - 태그명#아이디
+                - *#아이디 (모든 태그를 통틀어서 title2라는 id를 찾아 문서를 통틀어서 한 놈 밖에 없어 즉 차이가 없어)
+        */
+        h1#title1{ color: red;}
+        /* h1#title2{ color: yellow;} */
+        #title2{color:yellow}
+
+        h1{font-style:italic}
+        /* 일괄적용 */
+
+        /* div#content1{color: blue;}
+        div#content2{color:blue;} */
+        /* 
+            3. 클래스 선택자
+            - 태그에 명시된 class 속성을 참조하는 선택자
+            - 태그명.클래스
+            - .클래스(서로 다른 태그에도 같은 그룹으로 묶을 수 있어:div,p 태그가 있는거랑 없는 거랑 달라, 태그가 있으면 제한적임!!!!)
+        */
+        /* div.content{color:pink;} */
+        *.content{color:pink;}
+
+    </style>
+</head>
+<body>
+    <!-- ex03_selector.html -->
+    <h1 id = "title1">회사 소개</h1>
+    <div id = "content1" class = "content">대표 : 홍길동</div>
+    <div id = "content2" class = "content">위치 : 역삼동</div>
+
+
+    <hr>
+
+    <h1 id = "title2">대표 소개</h1>
+    <div>인삿말 어쩌구 저쩌구</div>
+    <p class = "content">문단입니다.</p>
+
+</body>
+</html>
+
+<!-- 태그는 어떤 얘를 특정 짓지 못하고 넓은 적용할때 클래스는 그 안에서 부분적인 그룹을 만들어서 쓰고 id는 한놈만 찍어서 그 놈만 바꿀려고 할때 
+아이디는 # 클래스는 . -->

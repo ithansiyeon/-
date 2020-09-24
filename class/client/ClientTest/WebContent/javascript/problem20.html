@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .main {
+            margin: 50px auto;
+            width: 500px;
+        }
+
+        #add {
+            width: 430px;
+            height: 250px;
+        }
+
+        th{
+            border: 1px solid black;
+           
+        }
+        #tbl1{
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 680px;
+        }
+        #tbody1{
+            border: 1px solid;
+            text-align: center;
+        }
+
+        #btnadd {
+            margin-top: 10px;
+        }
+        
+        td{
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <fieldset id="add">
+            <legend>입력 항목</legend>
+            <div><label for="txtname">이름 : </label><input type="text" id="txtname" autofocus></div>
+            <div><label for="selage">나이 : </label><select id="selage"></select></div>
+            <div><label for="rbgener">성별 : </label><label><input type="radio" name="rbgender" id="rbgender1" value="m" checked> 남자</label><label><input type="radio" name="rbgender" id="rbgender2" value="f"> 여자</label></div>
+            <div><label for="txtaddress">주소 : </label><input type="text" id="txtaddress"></div>
+            <div><input type="button" id="btnadd" value="추가하기"></div>
+        </fieldset>
+        
+        <table id="tbl1">
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>이름</th>
+                    <th>나이</th>
+                    <th>성별</th>
+                    <th>주소</th>
+                </tr>
+            </thead>
+            <tbody id="tbody1">
+                <tr>
+                    <td colspan="5">등록된 항목이 없습니다.</td>
+                </tr>
+            </tbody>
+        </table><br><br>
+        </div>
+        <script>
+            document.body.style.zoom = 1.5;
+            
+            var btnadd = document.getElementById("btnadd");
+            var txtname = document.getElementById("txtname");
+            var selage = document.getElementById("selage");
+            var rbgender1 = document.getElementById("rbgender1");
+            var rbgender2 = document.getElementById("rbgender2");
+            var txtaddress = document.getElementById("txtaddress");
+            var tbody1 = document.getElementById("tbody1");
+            var tr = tbody1.firstElementChild;
+          
+            var temp = "";
+            var n = 0;
+
+           for (var i = 20; i <= 60 ; i++) {
+                    selage.innerHTML += "<option value = '" + i+"''>" + i +"</option>";
+                }
+            
+
+        function add1(){
+                n++;
+               tbody1.innerHTML = "";
+                temp+="<tr>";
+
+                temp+="<td>";
+                temp+= n;
+                temp+="</td>";
+
+                 temp+="<td>";
+                 temp+=txtname.value;
+                 temp+="</td>";
+
+                 temp+="<td>";
+                 temp+= selage.value;
+                 temp+="</td>";
+
+                 temp+="<td>";
+                 if(rbgender1.checked) {
+                     temp+= "<img src = ../images/gender_m.png>";
+                 } else {
+                     temp+= "<img src = ../images/gender_f.png>";
+                 }
+                 temp+="</td>";
+
+                 temp+="<td>";
+                temp+= txtaddress.value;
+                temp+="</td>";
+                temp+="</tr>";
+
+                tbody1.innerHTML += temp;
+                txtname.value="";
+                selage.value="";
+                txtaddress.value="";
+                rbgender1.checked;
+                txtname.focus();
+            }
+
+    
+            btnadd.onclick = function(){
+            add1();
+            };
+
+            txtaddress.onkeyup = function () {
+                    if (event.keyCode == 13) {
+                        add1();
+                    }
+                };
+        </script>
+    
+    
+    </div>
+</body>
+</html>

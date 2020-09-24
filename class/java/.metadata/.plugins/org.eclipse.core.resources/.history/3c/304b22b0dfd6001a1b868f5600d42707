@@ -1,0 +1,14 @@
+package com.test.dummy;
+
+public class ReservationDummy {
+	public static void main(String[] args) {
+		
+		String bookdate[] = {"2020-06-29","2020-06-30"};
+		String state[] = {"완료","취소","만료","환불"};
+		// 매수는 0~10개 정도로 하고 
+		
+		
+		
+	}
+
+}

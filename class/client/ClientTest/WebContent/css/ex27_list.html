@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        #list1 {
+            /* list-style-type:decimal; */
+            /* list-style-type:lower-alpha; */
+            list-style-type: none;
+            list-style-image: url("../images/bullet09.png");
+            font-size: 2em;
+        }
+
+        #list2 {
+            font-size: 2em;
+            border: 0px solid black;
+            padding: 20px;
+        }
+        #list2 li{
+            border: 0px solid black;
+            background-image: url(../images/bullet09.png);
+            background-repeat: no-repeat;
+            background-position: 0px center;
+            padding-left: 15px;
+            list-style-type: none;
+            margin: 0;
+        }
+
+        #naver{
+            border: 0px solid black;
+            width: 450px;
+            height: 110px;
+            background-image: url(../images/sp_main.44265f.png);
+            background-position: 0px -320px;
+        }
+
+        #mode{
+            border: 0px solid black;
+            width: 280px;
+            height: 120px;
+            background-image: url(../images/sp_main.44265f.png);
+            background-position: -548px -230px;
+            /* background-position: -548px -110px; */
+        }
+
+        #mode:hover {
+            background-position: -548px -115px;
+        }
+    </style>
+<body>
+    <h1>오늘의 할일</h1>
+    <ul id = "list1">
+    <li>비주얼 스튜디오 코드 설치하기</li>
+    <li>이클립스 설치하기</li>
+    <li>오라클 설치하기</li>
+    <li>크롬 설치하기</li>
+    </ul>
+
+    <h1>오늘의 할일</h1>
+    <ul id = "list2">
+    <li>비주얼 스튜디오 코드 설치하기</li>
+    <li>이클립스 설치하기</li>
+    <li>오라클 설치하기</li>
+    <li>크롬 설치하기</li>
+    </ul>
+
+    <hr>
+
+    <!-- <img src="../images/sp_main.44265f.png"> -->
+
+    <div id = "naver"></div>
+
+
+    <div id = "mode"></div>
+    
+
+
+</body>
+</html>

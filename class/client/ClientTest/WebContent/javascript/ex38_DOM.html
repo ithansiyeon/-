@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tbl1{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        #tbl1 td{
+            border: 1px solid black;
+            width: 126px;
+            height: 126px;
+        }
+
+        #tbl1 td img{
+            display: block;
+        }
+
+
+
+    </style>
+</head>
+<body oncontextmenu="return false">
+    <!-- 오른쪽 버튼이 contextmenu가 안 떠  -->
+    <h1>테이블</h1>
+
+    <table id="tbl1">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+        //<tr>
+        var tr = document.getElementById("tbl1").firstElementChild.children;
+
+    for (var i = 0; i < tr.length; i++) {
+        var td = tr[i].children;
+
+        for (var j = 0; j < td.length; j++) {
+            // <td> x 9
+            // td[j].onclick = function(){
+            //     // alert('click'); // 포커스가 가는 얘들은 키보드로도 클릭 가능, mouse 이벤트가 아니야  
+            //     alert(event.buttons);
+            // };
+
+            td[j].onmousedown = function () {
+                // alert('down');
+                // alert(event.buttons);
+
+                // event.srcElement.bgColor = "gold";
+                console.log(event.srcElement.nodeName);
+
+                if (event.buttons == 1) {
+
+                    if (event.srcElement.nodeName == "TD") {
+                        event.srcElement.innerHTML = "<img src='../images/rect_icon01.png'>";
+                    } else if (event.srcElement.nodeName == "IMG") {
+                        event.srcElement.parentNode.innerHTML = "<img src='../images/rect_icon01.png'>";
+                    }
+                } else if (event.buttons == 2) {
+                    if (event.srcElement.nodeName == "TD") {
+                        event.srcElement.innerHTML = "<img src='../images/rect_icon02.png'>";
+                    } else if (event.srcElement.nodeName == "IMG") {
+                        event.srcElement.parentNode.innerHTML = "<img src='../images/rect_icon02.png'>";
+                    }
+                }
+                // 기존의 이미지가 있어도 덮어 쓰기가 가능함 
+                else if (event.buttons == 4) {
+                    if (event.srcElement.nodeName == "IMG") {
+                        event.srcElement.parentNode.innerHTML = "";
+                    }
+                }
+            };
+
+
+        }
+    }
+    </script>
+</body>
+</html>

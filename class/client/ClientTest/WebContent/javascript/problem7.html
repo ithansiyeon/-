@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       div{
+           width: 500px;
+           margin: 20px auto;
+       }
+       img{
+           /* padding-right: 10px; */
+           /* padding-bottom: 10pxs; */
+           margin: 10px 10px;
+           border: 10px solid #A9A9A9;
+       }
+
+       input {
+           margin: auto;
+           border: 10px solid #A9A9A9;
+           background-color: #EFEFEF;
+           margin-right: 5px;
+           font-size: 1.7em;
+       }
+
+       .btn{
+           width: 800px;
+           margin: auto;
+       }
+
+    </style>
+</head>
+<body>
+    <div>
+        <img src="../images/rect_icon01.png" name="img1" width="120px" height="120px" data-index="0">
+        <img src="../images/rect_icon02.png" name="img2" width="120px" height="120px" data-index="1">
+        <img src="../images/rect_icon03.png" name="img3" width="120px" height="120px" data-index="2">
+        <img src="../images/rect_icon04.png" name="img4" width="120px" height="120px" data-index="3">
+        <img src="../images/rect_icon05.png" name="img5" width="120px" height="120px" data-index="4">
+        <img src="../images/rect_icon06.png" name="img6" width="120px" height="120px" data-index="5">
+        <img src="../images/rect_icon07.png" name="img7" width="120px" height="120px" data-index="6">
+        <img src="../images/rect_icon08.png" name="img8" width="120px" height="120px" data-index="7">
+        <img src="../images/rect_icon09.png" name="img9" width="120px" height="120px" data-index="8">
+
+        <div class = "btn">
+            <input style="text-align: center; width: 240px; padding: 10px;" type="button" value="RESET" name = "reset">
+            <input style="text-align: center; width: 240px; padding: 10px;" type="button" value="INPUT" name = "input">
+        </div>
+    </div>
+   
+    <script>
+        var password = "";
+        // 한번만 올라가서 반응 가겠음 
+        // 시계일때는 공통적으로 반응 안하겠끔
+            var input = document.all.input;
+            var reset = document.all.reset;
+            var images = document.images;
+
+            // var list = [["../images/rect_icon01.png"], ["../images/rect_icon02.png"],
+            // ["../images/rect_icon03.png"], ["../images/rect_icon04.png"],
+            // ["../images/rect_icon05.png"], ["../images/rect_icon06.png"],
+            // ["../images/rect_icon07.png"], ["../images/rect_icon08.png"],
+            // ["../images/rect_icon09.png"]];
+
+            var list = new Array();
+            for(var i=0;i<images.length;i++){
+                list[i] = "../images/rect_icon0"+(i+1)+".png";
+                // console.log(list[i]);
+            }
+
+            for (var i = 0; i < images.length; i++) {
+                images[i].onmouseover = function () {
+                    if(event.srcElement.src!="http://127.0.0.1:5500/images/rect_icon10.png")
+                         password += event.srcElement.dataset["index"];
+                    console.log(event.srcElement.src);
+                    console.log(password);
+                    event.srcElement.src = "../images/rect_icon10.png";
+                };
+            }
+
+            function remove() {
+                for (var i = 0; i < images.length; i++) {
+                    images[i].src = list[i];
+                    // images[i].src = list[images[i].dataset["index"]];
+                }
+            }
+
+            input.onclick = function () {
+                if (password == "03678") {
+                    location.href = "http://google.com";
+                } else {
+                    alert("Error!!");
+                    password="";
+                    remove();
+                }
+            };
+
+            reset.onclick = function() {
+                remove();
+            };
+       
+
+
+    </script>
+</body>
+</html>

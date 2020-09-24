@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<!-- saved from url=(0113)http://211.63.89.31:8025/question/view/?subject=javascript&title=%EB%B0%9C%EC%9E%90%EA%B5%AD%2B%ED%81%B4%EB%A6%AD -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="Author" content="in">
+	<meta name="Generator" content="Visual Studio Code">
+	<title>Question :: javascript 발자국+클릭</title>
+	<link rel="stylesheet" href="./Question __ javascript 발자국+클릭_files/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+	<link rel="stylesheet" href="./Question __ javascript 발자국+클릭_files/basic.css">
+	<style>
+			</style>
+<style type="text/css">* {<br>		-webkit-user-select: text !important;<br>		-moz-user-select: text !important;<br>		-ms-user-select: text !important;<br>		 user-select: text !important;<br>	}</style></head>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+
+	
+<style>
+	#tbl1 {
+		border: 1px solid black;
+		border-collapse: collapse;
+	}
+	#tbl1 td {
+		border: 1px solid black;
+		width: 120px;
+		height: 120px;
+	}
+	#tbl1 td img {
+		display: block;
+		width: 120px;
+		height: 120px;
+	}
+</style>
+<script>
+	
+	var timer = 0;
+	var index = -1;
+	var cell, btn1;
+
+	window.onload = function() {
+		
+		cell = document.getElementsByClassName("cell");
+		btn1 = document.getElementById("btn1");
+		
+		for (var i=0; i<cell.length; i++) {
+			cell[i].onclick = function() {
+				if (event.srcElement.nodeName == "TD") {
+
+					for (var j=0; j<cell.length; j++) {
+						cell[j].innerHTML = "";
+					}
+
+					var c = parseInt(event.srcElement.dataset["color"]);
+					c -= 25;
+					if (c >= 0) {
+						event.srcElement.style.backgroundColor = "rgb(" + c + "," + c + "," + c + ")";
+						event.srcElement.dataset["color"] = c;
+					} else {
+						event.srcElement.onclick = null;
+					}
+					event.srcElement.innerHTML = "<img src='../images/dog-foot.png'>";
+				}
+			};
+		}
+		
+	};
+	
+</script>
+<div class="main m1200">
+	<div class="mainHeader">
+		<h1>발자국 ver. 클릭 - 선생님꺼 <i class="far fa-lightbulb" style="font-size: .74em;margin-left:10px;cursor: pointer;" onclick="toggleHint();" title="약간의 도움말"></i></h1>
+		<div>발자국이 눌려진 곳은 점점 흙이 쌓인다.</div>
+		<ul>
+			<li>td.style.backgroundColor = rgb(n1, n2, n3);</li>
+			<li>더러워진 칸은 더이상 누를 수 없다.(이벤트 해제)</li>
+			<li><a href="http://211.63.89.31:8025/question/images/dog-foot.zip" download="">이미지 다운로드</a></li>
+		</ul>
+		<div class="code"><i class="fas fa-keyboard"></i> </div>
+	</div>
+	<table id="tbl1">
+		<tbody><tr>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+		</tr>
+		<tr>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+		</tr>
+		<tr>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+		</tr>
+		<tr>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="230" style="background-color: rgb(230, 230, 230);"><img src="../images/dog-foot.png"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+		</tr>
+		<tr>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+		</tr>
+	</tbody></table>
+</div>
+	<script src="./Question __ javascript 발자국+클릭_files/basic.js.다운로드"></script>
+
+<script type="text/javascript">
+		document.oncontextmenu = null;
+		document.onselectstart = null;
+		document.ondragstart = null;
+		document.onmousedown = null;
+		document.body.oncontextmenu = null;
+		document.body.onselectstart = null;
+		document.body.ondragstart = null;
+		document.body.onmousedown = null;
+		document.body.oncut = null;
+		document.body.oncopy = null;
+		document.body.onpaste = null;
+	</script></body></html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        /* display: 요소의 출력 방식을 결정 */
+        .box{
+            border: 1px solid black;
+            width:200px;
+            height: 200px;
+            display: inline;
+        }
+
+        /* block 이 inline이 되었어 */
+
+        .link{
+            border: 1px solid black;
+            width:200px;
+            height: 200px;
+            display: block;
+        }
+        /* 태그의 갯수는 적어 */
+
+        #menu ul{
+        border: 1px solid blue;
+        padding: 0;
+    }
+
+        #menu li{
+            border: 0px solid red;
+            display: inline-block;
+            width: 20%;
+            text-align:  center;
+        }
+        /* 블럭형태 */
+
+        .cat{
+            display:block; margin: 30px;
+        }
+        /* 인라인 테그를 쓰돼 블록으로 해서 한줄씩 출력을 할 수 있어 */
+        
+    </style>
+<body>
+    <!-- ex21_display.html -->
+    <nav id = "menu">
+        <ul>
+            <li>홈</li><li>회원</li><li>관리자</li><li>게시판</li><li>통계</li>
+        </ul>
+    </nav>
+
+<!-- 메뉴도 항목들의 집합이라고 생각 => 목록(의미 있는 걸 쓰자) -->
+
+    <h1>블럭태그</h1>
+    <!-- div#box$.box{상자$}*3 -->
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+
+    <h1>인라인태그</h1> 
+    <a href="#" id="link1" class="link">링크1</a>
+    <a href="#" id="link2" class="link">링크2</a>
+    <a href="#" id="link3" class="link">링크3</a>
+
+    <h1>고양이</h1>
+
+    <img src = "../images/catty01.png" class = "cat">
+    <img src = "../images/catty01.png" class = "cat">
+    <img src = "../images/catty01.png" class = "cat">
+    <img src = "../images/catty01.png" class = "cat">
+    <img src = "../images/catty01.png" class = "cat">
+    <img src = "../images/catty01.png" class = "cat">
+    <img src = "../images/catty01.png" class = "cat">
+    <img src = "../images/catty01.png" class = "cat">
+    <img src = "../images/catty01.png" class = "cat">
+    <img src = "../images/catty01.png" class = "cat">
+    <img src = "../images/catty01.png" class = "cat">
+    <img src = "../images/catty01.png" class = "cat">
+
+</body>
+</html>

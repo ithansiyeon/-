@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Board</title>
+<style>
+	body{
+		background-color:#EEEEEE;
+	}
+
+    #main {
+        margin: 50px auto;
+        background: #FDFDFE;
+        width: 1000px;
+        height: 700px;
+        border-radius: 3px;
+        border-color: 1px solid rgb(221, 221, 221);;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        width:900px; 
+        margin: 0px auto;
+        padding-top: 10px;
+        border-bottom: 1px solid #E6E6E6;
+        padding-left: 10px;
+        margin-bottom: 20px;
+    }
+
+    #tbl1 {
+        width: 900px;
+        margin: 10px auto;
+        text-align: center;
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    #tbl1 th{
+        background-color: #FAFAFA;
+        border: 0px;
+        border-bottom: 2px solid #ddd;
+        font-size: 14px;
+        color: #444;
+    }
+
+    #tbl1 tr{
+        border-top: 1px solid #ddd;
+        vertical-align: bottom;
+  
+    }
+
+    #tbl1 td{
+        border: 0px;
+    }
+
+    #tbl1 tr:nth-child(1){
+        background-color: #DDDDDD;
+    }
+
+   #tbl1 td:nth-child(2){
+        text-align: left;
+    }
+
+    .pagebar {
+        display: inline;
+    }
+
+    ul{
+        list-style:none;
+    }
+
+    a {
+        position: relative;
+        float: left;
+        padding: 6px 12px;
+        margin-left: -1px;
+        line-height: 1.42857143;
+        text-decoration: none;
+        border: 1px solid #ddd;
+        color: #444;
+        
+    }
+
+    a:hover{  
+        color: tomato;
+        background-color: #eeeeee;
+        border-color: #ddd;
+    }
+
+    #pbox {
+        width: 350px;
+        margin: 30px auto;
+    }
+
+    #a:active {
+        color: #fff;
+        cursor: default;
+        background-color: #6C757D;
+        border-color: #6C757D;
+    }
+
+    .search {
+        float: right;
+        margin-right: 50px;
+        margin-bottom: 30px;
+    }
+
+    #btnsearch {
+        cursor: pointer;
+        float:right;
+    }
+
+</style>
+    <script scr="js/jquery-1.12.4"></script>
+</head>
+<body>
+   
+            <div id = "main">
+                <div id = "title"><h1>자유 게시판 <small>Board</small></h1></div>
+                <!-- <div class = "search">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class = "glyphicon glyphicon-search"></i></span>
+                            <input type="text" class = "form-control" placeholder="검색어를 입력하세요.">
+                        </div>
+                    </div>
+                </div> -->
+                
+                <div class ="search">
+                    <div>
+                        <div>
+                            <input type = "text" id = "insearch" placeholder = "검색어를 입력하세요.">
+                            <button id = "btnsearch">검색</button>
+                        </div>
+                    </div>
+                </div>
+                <table id = "tbl1">
+                    <tr>
+                        <th>번호</th>
+                        <th>제목</th>
+                        <th>이름</th>
+                        <th>날짜</th>
+                        <th>읽음</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>안녕하세요.</td>
+                        <td>홍길동</td>
+                        <td>2020-09-02</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>안녕하세요.</td>
+                        <td>홍길동</td>
+                        <td>2020-09-02</td>
+                        <td>10</td>
+                    </tr>
+                </table>
+                
+                <div id = "pbox">
+                <nav class = "pagebar">
+                     <ul>
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span area-label = "true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href = "#">1</a></li>
+                        <li><a href = "#">2</a></li>
+                        <li><a href = "#">3</a></li>
+                        <li><a href = "#">4</a></li>
+                        <li><a href = "#">5</a></li>
+                        <li><a href = "#">6</a></li>
+                        <ul>
+                            <li>
+                                <a href = "#" aria-label="Next">
+                                    <span area-label = "true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                     </ul>   
+                </nav>
+                </div>
+                <button style="float: right;width: 60px; margin-right: 50px;">글쓰기</button>
+            </div>
+            
+</body>
+</html>

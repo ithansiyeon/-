@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item {
+            /* width: 150px; */
+            /* height: 150px; */
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="list"></div>
+    <script>
+        var img;
+        var count = 0;
+        var list = document.getElementById("list");
+        window.addEventListener("mousedown", function () {
+            console.log(document.body.childElementCount);
+            if (document.body.nodeName = "IMG" && event.buttons == 1 && count >= 10) {
+                // if(document.body.firstChild==null) {
+
+                // }
+                list.removeChild(list.firstElementChild);
+                count--;
+
+            } else if (event.buttons == 1 && count < 10) {
+                img = document.createElement("img");
+
+                var n = Math.floor(Math.random() * 9) + 1;
+                if (n < 10) {
+                    n = "0" + n;
+                }
+                // code.src ='../images/m'+n+'.png';
+                img.setAttribute("class", "item");
+                img.setAttribute("src", '../images/m' + n + '.png');
+                img.style.left = event.clientX - 75 + "px";
+                img.style.top = event.clientY - 75 + "px";
+
+                list.appendChild(img);
+                count++;
+            }
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 다시 풀기 */
+            #main {
+                width: 784px;
+                margin: 3px auto;
+                /* border: 1px solid black; */
+            }
+            .number{
+                width: 150px;
+                border-top-left-radius: 5%;
+                border-bottom-left-radius: 5%;
+                border-top-right-radius: 5%;
+                border-bottom-right-radius: 5%;
+                border: 1px solid black;
+                font-weight: bold;
+                font-size: 30px;
+                text-align: center;
+                height: 50px;
+                float: left;
+                margin-right: 2px;
+                }
+
+            /* .number::after{
+                content: " ";
+                clear: both;
+                display: block;
+            } */
+            hr{
+                width: 770px;
+            }
+
+            .pixel{
+                background-image: url(../images/rect_icon07.png);
+                background-size: 100% 100%;
+                background-position: center center;
+                background-repeat: no-repeat;
+                width: 74px;
+                height: 74px;
+                border: 1px solid black;
+                display: inline-block;
+                margin-left: -4px;
+                margin-bottom: -4px;
+                /* animation-duration: .5s; */
+                transition: all .5ms;
+                transition-timing-function: linear;
+                /* position: absolute; */
+                /* left: 0;
+                top: 0; */
+            }
+            /* 이미지는 위에 보이는 얘라서 내려가면 보이지만, 배경이미지는 구멍 아래로 내려가면 뒤에 있어서 안보임 
+            ~ one과 같은 자식들이지만 스페이스는 부모 자식 관계 + 바로 밑에 있는 동생 */
+            #one:hover ~.one {
+                background-position: center 74px;
+            }
+
+            #two:hover ~.two {
+                background-position: center 74px;
+            }
+
+            #three:hover ~.three {
+                background-position: center 74px;
+            }
+
+            #four:hover ~.four {
+                background-position: center 74px;
+            }
+
+            #five:hover ~.five {
+                background-position: center 74px;
+            }
+
+            /* 이해가 안돼 왜 ~이고 center 74px했을때 움직이는 지 */
+        @keyframes key1{
+            from {transform: translate(0px, 0px);}
+            to {transform: translate(0px, 76px);}
+        }   
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="one" class="number">1</div>
+        <div id="two" class="number">2</div>
+        <div id="three" class="number">3</div>
+        <div id="four" class="number">4</div>
+        <div id="five" class="number">5</div>
+        <div style="clear:both;"></div>
+        <hr>
+    
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div style="clear:both;"></div>
+    
+        <div class="pixel"></div>
+        <div class="pixel two three four five"></div>
+        <div class="pixel two three four five"></div>
+        <div class="pixel two three five"></div>
+        <div class="pixel one two three five"></div>
+        <div class="pixel one two three five"></div>
+        <div class="pixel two three four five"></div>
+        <div class="pixel two three four five"></div>
+        <div class="pixel two three five"></div>
+        <div class="pixel"></div>
+        <div style="clear:both;"></div>
+    
+        <div class="pixel"></div>
+        <div class="pixel two three four five"></div>
+        <div class="pixel two three four five"></div>
+        <div class="pixel two three five"></div>
+        <div class="pixel one two three five"></div>
+        <div class="pixel one two three five"></div>
+        <div class="pixel two three four five"></div>
+        <div class="pixel two three four five"></div>
+        <div class="pixel two three five"></div>
+        <div class="pixel"></div>
+        <div style="clear:both;"></div>
+    
+        <div class="pixel"></div>
+        <div class="pixel four five"></div>
+        <div class="pixel four five"></div>
+        <div class="pixel"></div>
+        <div class="pixel one"></div>
+        <div class="pixel one"></div>
+        <div class="pixel four"></div>
+        <div class="pixel two three four"></div>
+        <div class="pixel two three"></div>
+        <div class="pixel"></div>
+        <div style="clear:both;"></div>
+    
+        <div class="pixel"></div>
+        <div class="pixel two three four five"></div>
+        <div class="pixel two three four five"></div>
+        <div class="pixel two three five"></div>
+        <div class="pixel one two three five"></div>
+        <div class="pixel one two three five"></div>
+        <div class="pixel two three four five"></div>
+        <div class="pixel two three four five"></div>
+        <div class="pixel two three five"></div>
+        <div class="pixel"></div>
+        <div style="clear:both;"></div>
+    
+        <div class="pixel"></div>
+        <div class="pixel two three four five"></div>
+        <div class="pixel two three four five"></div>
+        <div class="pixel two three four five"></div>
+        <div class="pixel one two three four five"></div>
+        <div class="pixel one two three four five"></div>
+        <div class="pixel two three four five"></div>
+        <div class="pixel two three four five"></div>
+        <div class="pixel two three four five"></div>
+        <div class="pixel"></div>
+        <div style="clear:both;"></div>
+    
+        <div class="pixel"></div>
+        <div class="pixel two four four"></div>
+        <div class="pixel two four four"></div>
+        <div class="pixel four"></div>
+        <div class="pixel one four"></div>
+        <div class="pixel one four"></div>
+        <div class="pixel four"></div>
+        <div class="pixel three four five"></div>
+        <div class="pixel three four five"></div>
+        <div class="pixel"></div>
+        <div style="clear:both;"></div>
+    
+        <div class="pixel"></div>
+        <div class="pixel two three five"></div>
+        <div class="pixel two three five"></div>
+        <div class="pixel two three five"></div>
+        <div class="pixel one two three five"></div>
+        <div class="pixel one two three five"></div>
+        <div class="pixel two three four five"></div>
+        <div class="pixel two three four five"></div>
+        <div class="pixel two three five"></div>
+        <div class="pixel"></div>
+        <div style="clear:both;"></div>
+    
+        <div class="pixel"></div>
+        <div class="pixel two three five"></div>
+        <div class="pixel two three five"></div>
+        <div class="pixel two three five"></div>
+        <div class="pixel one two three five"></div>
+        <div class="pixel one two three five"></div>
+        <div class="pixel two three four five"></div>
+        <div class="pixel two three four five"></div>
+        <div class="pixel two three five"></div>
+        <div class="pixel"></div>
+        <div style="clear:both;"></div>
+    
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div style="clear:both;"></div>
+    
+    </div>		
+        
+</body>
+</html>

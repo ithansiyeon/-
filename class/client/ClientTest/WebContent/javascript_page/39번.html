@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<!-- saved from url=(0122)http://211.63.89.31:8025/question/view/?subject=javascript&title=%EB%B0%9C%EC%9E%90%EA%B5%AD%2B%ED%83%80%EC%9D%B4%EB%A8%B8 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="Author" content="in">
+	<meta name="Generator" content="Visual Studio Code">
+	<title>Question :: javascript 발자국+타이머</title>
+	<link rel="stylesheet" href="./39_files/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+	<link rel="stylesheet" href="./39_files/basic.css">
+	<style>
+			</style>
+</head>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+
+	
+<style>
+	#tbl1 {
+		border: 1px solid black;
+		border-collapse: collapse;
+	}
+	#tbl1 td {
+		border: 1px solid black;
+		width: 120px;
+		height: 120px;
+	}
+	#tbl1 td img {
+	  display: block;
+		width: 120px;
+		height: 120px;
+	}
+</style>
+<script>
+	
+	var timer = 0;
+	var index = -1;
+	var cell, btn1;
+	var foot = "left";
+	var c = 255;
+
+	window.onload = function() {
+		
+		cell = document.getElementsByClassName("cell");
+		btn1 = document.getElementById("btn1");
+		
+		btn1.onclick = function() {
+		  timer = setInterval(function() {
+		    if (index > -1) {
+		      cell[index].innerHTML = "";
+		      cell[index].style.backgroundColor = "rgb(" + c + ", " + c + ", " + c + ")";
+		      c-=5;
+		      if (c < 0) clearInterval(timer);
+		    }
+    		index++;
+    		if (index == 5) index = 0;
+		    cell[index].innerHTML = "<img src='../images/foot_" + foot + ".png'>";
+		    if (foot == "left") foot = "right";
+		    else foot = "left";
+		    
+		  }, 300);
+		};
+		
+	};
+	
+</script>
+<div class="main m800">
+	<div class="mainHeader">
+		<h1>발자국 ver. 타이머 - 선생님꺼 <i class="far fa-lightbulb" style="font-size: .74em;margin-left:10px;cursor: pointer;" onclick="toggleHint();" title="약간의 도움말"></i></h1>
+		<div>발자국이 지나간 곳은 점점 흙이 쌓인다.</div>
+		<ul>
+			<li>td.style.backgroundColor = rgb(n1, n2, n3);</li>
+			<li><a href="http://211.63.89.31:8025/question/images/foot.zip" download="">이미지 다운로드</a></li>
+		</ul>
+		<div class="code"><i class="fas fa-keyboard"></i> </div>
+	</div>
+	<input type="button" value="walk" id="btn1">
+	<hr>
+	<table id="tbl1">
+		<tbody><tr>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+		</tr>
+	</tbody></table>
+</div>
+	<script src="./39_files/basic.js.다운로드"></script>
+
+</body></html>

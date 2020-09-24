@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .txt{
+            width: 180px;
+        }
+
+        #title {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .sub{
+            margin-bottom: 20px;
+            border: 1px solid black;
+        }
+
+        #cb{
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .txt{
+            margin: 5px;
+        }
+
+        .main{
+            margin-top:50px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class = "main">
+        <fieldset>
+        <!-- <div id = "title">주문하기</div> -->
+        <legend>주문하시는 분</legend>
+            <div>이름 : <input type="text" name="txt1" class = "txt" autocomplete=off></div>
+            <div>주소 : <input type="text" name="txt2" class = "txt" autocomplete=off></div>
+        </fieldset>
+        <input type="checkbox" name="cb" id="cb"> 주문하시분과 정보가 동일합니다.
+
+        <fieldset>
+            <legend>받으시는 분</legend>
+            <div>이름 : <input type="text" name="txt3" class = "txt" autocomplete=off></div>
+            <div>주소 : <input type="text" name="txt4" class = "txt" autocomplete=off></div>
+        </fieldset>
+    </div>
+<script>
+    var cb = document.all.cb;
+    var txt1 = document.all.txt1;
+    var txt2 = document.all.txt2;
+    var txt3 = document.all.txt3;
+    var txt4 = document.all.txt4;
+
+    cb.onchange = function() {
+        if(cb.checked){
+        txt3.value = txt1.value;
+        txt4.value = txt2.value;
+        } else {
+            txt3.value = "";
+            txt4.value = "";
+            txt3.focus();
+        }
+    };
+    
+
+</script>
+</body>
+</html>

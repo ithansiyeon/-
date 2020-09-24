@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		#timer {
+			border: 1px solid black;
+			width: 700px;
+			height: 200px;
+			/* margin: 10px auto; */
+			text-align: center;
+		}
+		input {
+			display: inline-block;
+			margin: 20px auto;
+			width: 110px;
+			height: 50px;
+		}	
+		img{
+			text-align: center;
+			width: 100px;
+			height: 150px;
+			margin: 20px auto;
+			float: left;
+
+		}
+		
+		#timer span{
+			margin-top: 40px;
+			font-weight: bold;
+			font-size: 4.5em;
+			/* margin: 50px auto; */
+			float: left;
+		}
+
+		#timer span ::after {
+			content: ' ';
+            display: block;
+            clear: both;
+		}
+
+	
+
+	</style>
+</head>
+<body>
+    <div id="timer">
+		<img name="img1" src="../images/0.png">
+		<img name="img2" src="../images/0.png">
+		<span>:</span>
+		<img name="img3" src="../images/0.png">
+		<img name="img4" src="../images/0.png">
+		<span>:</span>
+		<img name="img5" src="../images/0.png">
+		<img name="img6" src="../images/0.png">
+	</div>
+	<div id="btns">
+		<input type="button" value="시작" name="btn1">
+		<input type="button" value="멈춤" name="btn2" disabled="true">
+		<input type="button" value="종료" name="btn3" disabled="true">
+	</div>
+	<script>
+		var btn1 = document.all.btn1;
+        var btn2 = document.all.btn2;
+        var btn3 = document.all.btn3;
+
+        var img = document.images;
+
+        var n = 0;
+        var n1 = 0;
+        var n2 = 0;
+        var timer1 = 0;
+        
+    btn1.onclick = function () {
+            if (timer1 == 0) {
+                timer1 = setInterval(function () {
+					
+                    n++;
+                   if(n>100) {
+                       n=0;
+					   n1+=1;
+					
+                       if(n1>60){
+                           n2+=1;
+                           n1=0;
+                       }
+                   }
+				   img[5].src = "../images/"+n%10+".png";
+				   img[4].src = "../images/"+parseInt(n/10)+".png";
+				   img[3].src = "../images/"+n1%10+".png";
+				   img[2].src = "../images/"+parseInt(n1/10)+".png";
+				   img[1].src = "../images/"+n2%10+".png";
+				   img[0].src = "../images/"+parseInt(n2/10)+".png";
+
+                }, 5);
+            } else {
+                clearInterval(timer1);
+                timer1 = 0; //초기화
+            }
+            btn1.disabled = true;
+            btn2.disabled = false;
+            btn3.disabled = false;
+    };
+
+
+    btn2.onclick = function () {
+    clearInterval(timer1);
+       timer1=0;
+      
+        btn1.disabled = false;
+        btn2.disabled = true;
+        btn3.disabled = false;
+
+    };
+
+    btn3.onclick = function () {
+   		 clearInterval(timer1);
+       timer1=0;
+       img[0].src="../images/0.png";
+       img[1].src="../images/0.png";
+       img[2].src="../images/0.png";
+       img[3].src="../images/0.png";
+       img[4].src="../images/0.png";
+       img[5].src="../images/0.png";
+       n=0;
+       n1=0;
+       n2=0;
+    
+        btn1.disabled = false;
+        btn2.disabled = true;
+        btn3.disabled = true;
+
+    };
+
+	</script>
+</body>
+</html>

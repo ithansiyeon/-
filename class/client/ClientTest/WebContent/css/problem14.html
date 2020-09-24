@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         /* transform: translate() scale() rotate()  */
+
+        .line{
+            border: 1px solid black;
+            width: 1400px;
+            height: 149.99px;
+        }
+
+        .ball{
+            font-size: 70.4px;
+            border-radius: 50%;
+            width: 101.99px;
+            height: 101.99px;
+            border: 1px solid black;
+            font-weight: bold;
+            text-align: center;
+            animation-fill-mode: forwards;
+            animation-timing-function: ease-out;
+        }
+
+        #list:hover .ball{
+            animation-name: key1;
+            animation-duration: 1s;
+        }
+        .ball:nth-child(1){
+            position: absolute; top:177px; 
+            background-color: #FF6347;
+            animation-timing-function: ease-in;
+        }
+
+        .ball:nth-child(2){
+            background-color: #FFD700;
+            position: absolute; top:330px; 
+            animation-timing-function: ease-in-out;
+            animation-duration: 2s;
+        }
+
+        .ball:nth-child(3){
+            background-color: #FFA500;
+            position: absolute; top:481px; 
+            animation-timing-function: ease;
+            animation-duration: 0.8s;
+        }
+
+        .ball:nth-child(4){
+            background-color: #ADFF2F;
+            position: absolute; top:633px; 
+            animation-timing-function: ease-in-out;
+        }
+        
+        .ball:nth-child(5){
+            background-color: #6495ED;
+            position: absolute; top:784px; 
+            animation-timing-function: ease-in;
+        }
+
+        @keyframes key1 {
+            from {transform:translate(0px,0px) rotate(-360deg); }
+            to {transform:translate(1298px,0px) rotate(360deg) ;} 
+    </style>
+
+</head>
+
+<body>
+
+</body>
+<div style="width: 1400px; margin: 30px auto;">
+    <h1 style="margin-top: 0px;">:hover + position(absolute) + transform(rotate) + transition</h1>
+    <div style="margin: 20px 0px; border-left: 3px dotted gray; padding-left: 10px;">
+        공를 회전시키면서 우측으로 이동하시오.
+    </div>
+    <div id="list">
+        <div class="ball">A</div>
+        <div class="ball">B</div>
+        <div class="ball">C</div>
+        <div class="ball">D</div>
+        <div class="ball">E</div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+</div>
+
+</html>

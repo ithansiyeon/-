@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tbl {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+
+        #tbl td {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            border-right: 1px solid;
+            border-bottom: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <table id="tbl" class="table">
+            <tbody id="tbody1">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>4</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- innerhtml -->
+    <script>
+        var row = 2;
+        var col = 2;
+        var tbl = document.getElementById("tbl");
+        var tbody1 = document.getElementById("tbody1");
+        var tr = tbody1.children;
+       
+        console.log(tr);
+
+        window.onkeydown = function () {
+            
+            if (event.keyCode == 37) {
+
+                if (col == 1) {
+                    return;
+                }
+
+                //좌
+                var tr = tbody1.children;
+                console.log(row);
+                for (var i = 0; i < row; i++) {
+                    //  tr = tbody1.children[i];
+                    tr[i].removeChild(tr[i].lastElementChild);
+                }
+                col--;
+                console.log("열"+col);
+            } else if (event.keyCode == 38) {
+                //상 , 하나 남았을때 
+                if (row==1) {
+                    return;
+                }
+
+                console.log(row);
+                tbody1.removeChild(tbody1.lastElementChild);
+                var tr = tbody1.children;
+                row--;
+                console.log("행"+row);
+            } else if (event.keyCode == 39) {
+                //우
+                var tr = tbody1.children;
+                console.log(tr.length);
+                for (var i = 0; i < row; i++) {
+                    var td = document.createElement("td");
+                    console.log(td);
+                    // console.log(tr);
+                    tr[i].appendChild(td);
+                }
+                col++;
+                console.log("열"+col);
+            } else if (event.keyCode == 40) {
+                //하
+                
+
+                var tr2 = document.createElement("tr");
+                for (var i = 0; i < col; i++) {
+                    var td = document.createElement("td");
+                   // tr2.lastChild[i].innerHTML = col;
+                    //col += col;
+                    tr2.appendChild(td);
+                }
+                tbody1.appendChild(tr2);
+                var tr = tbody1.children;
+                row++;
+                console.log("행"+row);
+            }
+            var n=0;
+            // console.log(tr.length);
+            // console.log(tr[0].lastElementChild.length);
+            // for(var i=0;i<tr.length;i++){
+            //     for(var j=0;j<tr[0].lastElementChild.length;j++){
+            //         n++;
+            //         tr[i].children[j]=n;
+            //     }
+            // }
+            for(var i=0;i<row;i++){
+                for(var j=0;j<col;j++){
+                    n++;
+                    tr[i].children[j].innerHTML=n;
+                }
+            }
+            //num 넘버링
+        };
+//  var table = document.createElement("table");
+//             for(var i=0;i<10;i++){
+//                 var tr = document.createElement("tr");
+
+//                 for(var j=0;j<5;j++){
+//                     var td = document.createElement("td");
+//                     td.innerText = i + "," + j;
+//                     tr.appendChild(td); // 조립
+
+//                 }
+//                 table.appendChild(tr); // 조립
+//             }
+//             table.className = "tbl";
+
+//             links.appendChild(table);
+//         };
+
+
+    </script>
+</body>
+
+</html>

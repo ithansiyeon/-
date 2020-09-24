@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clock {
+            width: 130px;
+            height: 140px;
+            border: 0px;
+            font-size: 5em;
+        }
+        #timer {
+            border: 1px solid black;
+            height: 150px;
+            width: 530px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        span{
+            font-weight: bold;
+            font-size: 5em;
+        }
+        #btns{
+            margin-top: 50px;
+          
+        }
+        .main {
+            height: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <!-- <div class="mainHeader">
+            <h1>스톱워치</h1>
+            <div>각 버튼의 활성화/비활성화 제어</div>
+            <div class="code">setTimeout() or setInterval() / clearTimeout() or clearInterval()</div>
+        </div> -->
+    
+        <div id="timer">
+            <input type="text" name="txt3" id="txt3" class = "clock" value = "00">
+            <span>:</span>
+            <input type="text" name="txt2" id="txt2" class = "clock" value = "00">
+            <span>:</span>
+            <input type="text" name="txt1" id="txt1" class = "clock" value = "00">
+        </div>
+        <div id="btns">
+            <input type="button" value="시작" name="btn1">
+            <input type="button" value="멈춤" name="btn2" disabled>
+            <input type="button" value="종료" name="btn3" disabled>
+        </div>
+            
+    </div>
+
+    <script>
+        var btn1 = document.all.btn1;
+        var btn2 = document.all.btn2;
+        var btn3 = document.all.btn3;
+
+        var txt1 = document.all.txt1;
+        var txt2 = document.all.txt2;
+        var txt3 = document.all.txt3;
+
+        var n = 0;
+        var n1 = 0;
+        var n2 = 0;
+        var timer1 = 0;
+        // var timer2 = 0;
+        // var timer3 = 0;
+
+    btn1.onclick = function () {
+            if (timer1 == 0) {
+                timer1 = setInterval(function () {
+                    txt1.value = zero(n);
+                    txt2.value = zero(n1);
+                    txt3.value = zero(n2);
+                    n++;
+                   if(n>100) {
+                       n=0;
+                       n1+=1;
+                       if(n1>60){
+                           n2+=1;
+                           n1=0;
+                       }
+                   }
+
+                }, 5);
+            } else {
+                clearInterval(timer1);
+                timer1 = 0; //초기화
+            }
+            btn1.disabled = true;
+            btn2.disabled = false;
+            btn3.disabled = false;
+    };
+
+
+    btn2.onclick = function () {
+    clearInterval(timer1);
+       timer1=0;
+       
+      
+      
+        btn1.disabled = false;
+        btn2.disabled = true;
+        btn3.disabled = false;
+
+    };
+
+    btn3.onclick = function () {
+    clearInterval(timer1);
+       timer1=0;
+       txt1.value="00";
+       txt2.value="00";
+       txt3.value="00";
+       n=0;
+       n1=0;
+       n2=0;
+      
+       
+        btn1.disabled = false;
+        btn2.disabled = true;
+        btn3.disabled = true;
+
+    };
+
+    function zero(n){
+            if(n<10) {
+                return n="0"+n;
+            } else {
+                return n;
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        img::after{
+            content: ' ';
+            display: block;
+            clear: both;
+        }
+        
+    </style>
+</head>
+<body>
+ 
+    <img src="../images/catty01.png" name="c1" id = "c1" width="100px" height="100px">
+    <img src="../images/catty02.png" name="c2" id = "c2" width="100px" height="100px">
+    <img src="../images/catty03.png" name="c3" id = "c3" width="100px" height="100px">
+    <img src="../images/catty04.png" name="c4" id = "c4" width="100px" height="100px">
+    <img src="../images/catty05.png" name="c5" id = "c5" width="100px" height="100px">
+   
+    <script>
+
+    var img = document.images;
+   
+        for(var i=0;i<img.length;i++){
+            img[i].onmouseover = function(){
+                console.log(event.srcElement.width)
+                event.srcElement.width+=5;
+                console.log(event.srcElement.width)
+                event.srcElement.height+=5;
+            };
+
+            img[i].onclick = function(){
+                if(confirm("reset??")){
+             }
+             event.srcElement.width=100;
+             event.srcElement.height=100;
+            };
+        }
+      
+    </script>
+      
+</body>
+</html>

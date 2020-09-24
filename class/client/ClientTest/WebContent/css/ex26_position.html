@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #search { height: 18px; width:300px;outline:none; }
+        #btn { }
+        
+        #list{
+            position: absolute;
+            left: 57px;
+            top: 24px;
+            background-color: white;
+            border:1px solid gray;
+            width:305px;
+            display: block;
+        }
+
+        #list.item {
+            margin: 10px;
+
+        }
+        #main{
+            border:0px solid black;
+            width: 800px; 
+            /* 너비 고정 반드시 */
+            margin: 0px auto;
+            position: relative;
+            left: 0px;
+            top: 0px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id = "main">
+        <header>
+            검색어:
+            <input type = "text" id = "search" autocomplete="off">
+            <input type="button" value = "검색하기" id ="btn">
+        </header>
+        <section>
+            <!-- 
+                ((h1>lorem)+(p>lorem))*5 
+            -->
+
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique ipsa eveniet delectus! Cumque iure, perferendis placeat fugiat illum voluptate odit, dolor delectus corrupti nemo sint. Inventore eaque commodi qui odit.</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis voluptate modi quibusdam inventore tempore minus perspiciatis repudiandae dolorum repellat? Aspernatur sapiente provident mollitia ut vero, sint explicabo dolor magnam quis.</p>
+            <h1>A, fugiat, dignissimos reprehenderit enim suscipit aperiam doloribus minus similique sint velit nostrum hic assumenda voluptatum voluptas exercitationem. Debitis nulla cupiditate officia, ratione id inventore sed nemo at molestias iusto?</h1>
+            <p>Odit saepe aliquam laudantium adipisci blanditiis ipsa tempore voluptatum tempora corporis assumenda accusantium esse, iure id molestias libero atque iste. Corrupti voluptas quo, beatae labore ea sint accusamus quas culpa.</p>
+            <h1>Totam molestias pariatur beatae ipsum, quaerat expedita! Voluptatem qui quaerat officia odio animi porro, eos sint nihil repudiandae quos possimus. Blanditiis dolores soluta, dolorum sequi vel veritatis? Aspernatur, numquam obcaecati!</h1>
+            <p>Consequatur eius placeat quidem, voluptates culpa consectetur voluptatibus dolor repellat veniam at, aspernatur laboriosam aperiam odio nostrum. Quis ea accusamus non odio perferendis perspiciatis, quas dolorum quidem. Praesentium, dignissimos accusantium!</p>
+            <h1>Harum deserunt voluptatibus aliquid nemo facilis aperiam omnis eligendi ullam vero eum! Rerum incidunt labore suscipit commodi ipsam, dolores accusantium iste consequatur impedit modi magnam recusandae quod quos, asperiores ab?</h1>
+            <p>Tenetur consequatur labore esse mollitia excepturi? Porro, laborum incidunt! Rem quae quos quod nam laboriosam? Harum expedita quo, magni velit voluptatum numquam earum labore facere, quas quasi id tempore aspernatur.</p>
+            <h1>Suscipit ex delectus quibusdam facere vitae quaerat dolores obcaecati vel consequuntur error! Illo quasi voluptates enim mollitia harum qui unde, omnis, vel aliquam, ullam nisi corporis excepturi quos beatae consequuntur.</h1>
+            <p>Maiores culpa nisi nobis aut eligendi necessitatibus et. Iure, fugiat explicabo! Suscipit, sapiente ex laboriosam magnam iste aliquid doloremque nam commodi ad blanditiis consectetur, dicta laborum quam minima nulla ducimus?</p>
+        </section>
+
+        <div id = "list">
+            <div class = "item">자바</div>
+            <div class = "item">오라클</div>
+            <div class = "item">HTML</div>
+            <div class = "item">JavaScript</div>
+            <div class = "item">CSS</div>
+            <div class = "item">JDBC</div>
+        </div>
+    </div>
+
+
+    
+</body>
+</html>

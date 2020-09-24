@@ -1,0 +1,9 @@
+package com.test.dummy;
+
+public class CustomerView {
+
+	public static void main(String[] args) {
+
+	}
+
+}

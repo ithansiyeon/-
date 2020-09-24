@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tbl1 {
+            border: 1px solid black;
+            width: 610px;
+            height: 120px;
+            border-collapse: collapse;
+        }
+
+        #btn1 {
+            background-color: #EFEFEF;
+        }
+
+        div {
+            margin: 100px auto;
+            width: 800px;
+        }
+
+        .cell {
+            border-right: 1px solid black;
+            width: 118px;
+            height: 118px;
+        }
+
+        img {
+            display: block;
+            width: 118px;
+            height: 118px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="button" value="walk" id="btn1">
+        <hr>
+        <table id="tbl1">
+            <tbody>
+                <tr>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                    <td class="cell"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var btn1 = document.getElementById("btn1");
+        var cell = document.getElementsByClassName("cell");
+        var tr = document.getElementsByTagName("tr");
+        var index = -1;
+        var timer = 0;
+        var list = [255, 255, 255, 255, 255];
+        var count = 0;
+        btn1.onclick = function () {
+            if (timer == 0) {
+                timer = setInterval(function () {
+
+                    if (index < cell.length && (list[0] != -15 || list[1] != -15 || list[2] != -15 || list[3] != -15 || list[4] != -15)) {
+                        clear();
+                        if(index>-1){
+                            cell[index].style.backgroundColor = "rgb(" + list[index] + "," + list[index] +  "," + list[index] + ")";
+
+                        }
+                        index++;
+                        if (index % 2 == 0) {
+                            cell[index].innerHTML = "<img src = '../images/foot_left.png'>";
+                            list[index] -= 15;
+
+                        }
+                      
+                        else if (index < cell.length && index % 2 == 1) {
+                            cell[index].innerHTML = "<img src = '../images/foot_right.png'>";
+                            list[index] -= 15;
+                        }
+                      
+                        
+                    }
+
+                    if (index == cell.length) {
+                        index = -1;
+                    }
+                }, 300);
+
+            } else if (list[0] == -23 && list[1] == -23 && list[2] == -23 && list[3] == -23 && list[4] == -23) {
+                clearInterval(timer);
+                timer = 0;
+            }
+        };
+
+        function clear() {
+            for (var i = 0; i < cell.length; i++) {
+                if (cell[i].hasChildNodes) {
+                    cell[i].innerHTML = "";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

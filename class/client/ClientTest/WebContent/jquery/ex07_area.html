@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #box1{
+            border: 10px solid black;
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+            padding: 20px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery에서 객체의 영역에 관련된 기능(=박스모델)</h1>
+
+    <div id="box1">상자</div>
+
+    <script src = "js/jquery-1.12.4.js"></script>
+    <script>    
+        // - JavaScript를 사용해서 CSS의 속성값을 읽을 때 
+        // 1. 임베디드 스타일 시트 or 외부 스타일 시트로 정의된 값을 읽을 수 없다.
+        // 해당 태그가 가지고 있는 모든 CSS 값(인라인, 임베디드, 외부, 초기값) 
+        // console.log(getComputedStyle(box1)); // 객체가 나옴 
+
+        console.log(document.getElementById("box1").style.width);
+        console.log(getComputedStyle(document.getElementById("box1"))["width"]);
+
+        console.log("width",$("#box1").css("width")); 
+        console.log("height",$("#box1").css("height")); 
+
+        console.log("width",$("#box1").width());
+        console.log("height",$("#box1").height());
+
+        // $("#box1").width(100);
+
+        // 콘텐츠 영역 크기 + padding
+        console.log("innerWidth()",$("#box1").innerWidth());
+        console.log("innerHeight()",$("#box1").innerHeight());
+        
+        //실제 상자!!!
+        //콘텐츠 영역 크기 + padding + border
+        console.log("outerWidth()",$("#box1").outerWidth());
+        console.log("outerHeight()",$("#box1").outerHeight());
+
+        //콘텐츠 영역 크기 + padding + border + margin
+        console.log("outerWidth()",$("#box1").outerWidth(true));
+        console.log("outerHeight()",$("#box1").outerHeight(true)); // margin 까지 포함 
+
+
+
+
+    </script>
+
+  
+</body>
+</html>

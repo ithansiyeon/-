@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin-bottom: 300px;
+        }
+
+        .box {
+            border: 1px solid black;
+            width: 500px;
+            height: 300px;
+            margin: 20px;
+        }
+
+        #box1 {
+            background-image: url(../images/catty01.png),
+                url(../images/catty03.png), url(../images/catty05.png);
+            background-repeat: no-repeat;
+            background-position: left top, right top, bottom right;
+        }
+
+        #box2{
+            background-image: url(../images/cat01_big.jpg);
+            /* background-size: 500px 300px; */
+            /* background-size: 250px 150px; */
+            /* background-size: 25px 15px; */
+            /* background-size: 500px 30px; */
+            /* background-size: 100% 100%; */
+            /* 500 300과 같은 상태 */
+            /* background-size: 500px auto; */
+            background-size: auto 300px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-color: cornflowerblue;
+
+        }
+
+        #box3{
+            /* 
+                contain : 배경 이미지가 있는 공간의 단축을 100%으로 출력 + 반복되는 영역 발생
+                - 배경이미지의 크기가 상자와 같게 만들되 -> 이미지가 짤리지 않고 출력되게
+                background-size ; auto 상자높이;4
+
+                cover:배경 이미지가 있는 공간의 장축을 100%으로 출려 + 반복 영역 미발생
+                - 배경이미지의 일부가 짤리면서 꽉찬 이미지로 출력되게...
+                background-size : 상자너비 auto;
+
+             */
+
+            background-image: url(../images/cat01_big.jpg);
+            background-size: cover;
+            background-position: center center;
+        }
+
+        #thumbnail {
+            border: 1px solid gray;
+            width: 516px;
+           
+        }
+        /* width 계산 한 것: 152*3(456)+ 60 = 516 */
+        #thumbnail::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        #thumbnail > div {
+            border: 1px solid gray;
+            width: 150px;
+            height: 150px;
+            float: left;
+            margin: 10px;
+            text-align: center;
+        }
+        /* #thumbnail > div:nth-child(1) > img{
+            padding-top: 10px;
+            height: 140px;
+        }
+
+        #thumbnail > div:nth-child(1) > img{
+          height: 100%;
+        }
+
+        #thumbnail > div:nth-child(2) > img{
+           padding-top: 30px;
+           height: 120px;
+        }
+
+        #thumbnail > div:nth-child(2) > img{
+            width: 100%;
+        }
+
+        #thumbnail > div:nth-child(3) > img{
+            padding-top: 50px;
+            height: 100px;
+        }
+
+        #thumbnail > div:nth-child(3) > img{
+            width: 100%;
+        } */
+
+        #thumbnail > div {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        #thumbnail > div:nth-child(1){
+            background-image: url(../images/sp.png);
+           
+        }
+
+        #thumbnail > div:nth-child(2){
+            background-image: url(../images/mobile_1440421138.jpg);
+           
+        }
+
+        
+        #thumbnail > div:nth-child(3){
+            background-image: url(../images/main.png);
+           
+        }
+        /* 배경이미지로 쓰면 통일되게 한결 같이 쓰기 편해 */
+
+        /* 풀 사이즈 배경 이미지 */
+        html{
+            /* border: 10px solid blue; */
+            background-image: url(../images/wall34.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            background-attachment: fixed;
+            /* 아래쪽 여백이 안보여 */
+
+        }
+
+        body{
+            /* border: 10px solid red; */
+        }
+
+        /* 배경색 
+         1. solid color : 단색
+         2. gradient : 색의 변화를 시각적으로 표현
+            - 선형
+            - 원형 
+        */
+       
+        #box4{
+            background: linear-gradient(white,black);
+        }
+
+        #box5{
+            background: linear-gradient(black,white);
+        }
+
+        #box6{
+            background: linear-gradient(35deg, yellow,yellow,yellow,red,blue,green,orange);
+        }
+        /*(begin,end) 중간값을 표현하다 보니까 저렇게 나와, 방향 지정 가능 */
+
+        /* 타원 */
+        #box7{
+            background: radial-gradient(red,yellow);
+        }
+
+        /* 원(가로,세로 비율이 같은) */
+        #box8 {
+            background: radial-gradient(circle,white,#5726CF,#5726CF);
+        }
+        /* control, 버튼에 gradient가 자주 쓰여 */
+
+    </style>
+</head>
+
+<body>
+
+    <!-- (div#box$.box>lorem)*3 -->
+
+    <div id="box1" class="box">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet voluptatum minima,
+        reprehenderit facere earum debitis quaerat nisi modi officiis saepe numquam expedita? Quia culpa aut sequi fuga
+        nostrum a ratione?</div>
+    <div id="box2" class="box">Fugit, vel quibusdam ratione, debitis commodi accusantium ut voluptatibus nisi rem quidem
+        magni aperiam. Sed commodi deserunt est corporis a eaque magnam dicta eos harum. Placeat magnam magni molestias
+        non?</div>
+    <div id="box3" class="box">Aliquid ab dignissimos minus provident temporibus vitae, deserunt illum laborum sunt
+        aliquam quo necessitatibus culpa a id velit voluptas distinctio illo unde ducimus quidem amet rerum maxime
+        nihil. Totam, laborum!</div>
+
+        <h1>썸네일</h1>
+
+        <div id = "thumbnail">
+            <div class = "item"></div>
+            <div class = "item"></div>
+            <div class = "item"></div>
+        </div>
+
+        <h1>상자</h1>
+
+        <div id = "box4" class = "box">상자1</div>
+        <div id = "box5" class = "box">상자2</div>
+        <div id = "box6" class = "box">상자3</div>
+        <div id = "box7" class = "box">상자4</div>
+        <div id = "box8" class = "box">상자5</div>
+        <!-- (div #box$ .box{상자$})*5 -->
+        (div #box$ .box{상자$})*5
+
+</body>
+
+</html>

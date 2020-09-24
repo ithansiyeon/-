@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="../images/cat01.jpg" name="c1" width="100px" height="100px" data-index = "0">
+    <img src="../images/cat02.jpg" name="c2" width="100px" height="100px" data-index = "1">
+    <img src="../images/cat03.jpg" name="c3" width="100px" height="100px" data-index = "2">
+    <img src="../images/cat04.jpg" name="c4" width="100px" height="100px" data-index = "3">
+    <img src="../images/cat05.jpg" name="c5" width="100px" height="100px" data-index = "4">
+
+    <!-- <img src="../images/dog01.jpg" name="d1" width="100px" height="100px">
+    <img src="../images/dog02.jpg" name="d2" width="100px" height="100px">
+    <img src="../images/dog03.jpg" name="d3" width="100px" height="100px">
+    <img src="../images/dog04.jpg" name="d4" width="100px" height="100px">
+    <img src="../images/dog05.jpg" name="d5" width="100px" height="100px"> -->
+
+    <script>
+        // var c1 = document.images["c1"]
+        // var c2 = document.images["c2"]
+        // var c3 = document.images["c3"]
+        // var c4 = document.images["c4"]
+        // var c5 = document.images["c5"]
+
+        var list = [
+                ["cat01.jpg","dog01.jpg"], ["cat02.jpg","dog02.jpg"] ,
+                ["cat03.jpg","dog03.jpg"], ["cat04.jpg","dog04.jpg"]
+                , ["cat05.jpg","dog05.jpg"]
+            ];
+
+        for(var i=1;i<=list.length;i++){ // var은 for문안에서 인식X, function에서 인식 
+            var c = document.images["c"+i];
+            c.onmouseover = function(){ //중요, 이 사건이 생기면 실행 
+                // cat.src = 
+                // console.log(i); // 임시 보관함에다가 저장, closure (좀비) i가 5일때 탈출도니까 하나만 살려둬 최종값만 활용이 돼서 
+                event.srcElement.src =  "../images/" + list[event.srcElement.dataset["index"]][0];
+            };
+            c.onmouseout = function(){ //중요, 이 사건이 생기면 실행 
+                // cat.src = 
+                // console.log(i); // 임시 보관함에다가 저장, closure (좀비) i가 5일때 탈출도니까 하나만 살려둬 최종값만 활용이 돼서 
+                event.srcElement.src =  "../images/" + list[event.srcElement.dataset["index"]][1];
+            };
+        }
+       
+
+    </script>
+</body>
+</html>

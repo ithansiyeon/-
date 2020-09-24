@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!-- saved from url=(0159)http://211.63.89.31:8025/question/view/?subject=javascript&title=%EB%A7%88%EC%9A%B0%EC%8A%A4%2B%EB%8F%99%EC%A0%81%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%B6%94%EA%B0%801 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="Author" content="in">
+	<meta name="Generator" content="Visual Studio Code">
+	<title>Question :: javascript 마우스+동적이미지추가1</title>
+	<link rel="stylesheet" href="./Question __ javascript 마우스+동적이미지추가1_files/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+	<link rel="stylesheet" href="./Question __ javascript 마우스+동적이미지추가1_files/basic.css">
+	<style>
+			</style>
+</head>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+
+	<style type="text/css">
+	.item {
+		position: absolute;
+	}
+</style>
+<div class="main m800">
+	<div class="mainHeader">
+		<h1>마우스 + 동적 이미지 추가하기 - 선생님꺼 <i class="far fa-lightbulb" style="font-size: .74em;margin-left:10px;cursor: pointer;" onclick="toggleHint();" title="약간의 도움말"></i></h1>
+		<div>마우스를 클릭하면 이미지를 추가하시오.</div>
+		<div class="code"><i class="fas fa-keyboard"></i> </div>
+	</div>
+</div>
+<script type="text/javascript">
+	/*
+	
+	.item {position:absolute;}
+
+	1. 클릭
+	2. var img = createElement("img")
+	3. img.style.left = event.clientX
+	
+	3.5 A img.style.position = "absolute";
+	3.5 B img.setAttribute("class", "item");
+	
+	4. body.appendChild(img)
+	
+	*/
+	var item;
+	
+	
+	window.onload = function() {		
+		
+		window.onmousedown = function () {
+			
+			img = document.createElement("img");
+			
+			img.setAttribute("class", "item");
+			img.setAttribute("src", "../images/m01.png");
+			
+			img.style.left = (event.clientX - 64) + "px";
+			img.style.top = (event.clientY - 64) + "px";
+			
+			document.body.appendChild(img);
+		}
+
+	};
+</script>
+
+
+
+
+
+
+
+
+
+	<script src="./Question __ javascript 마우스+동적이미지추가1_files/basic.js.다운로드"></script>
+
+<img class="item" src="./Question __ javascript 마우스+동적이미지추가1_files/m01.png" style="left: 130px; top: 213px;"><img class="item" src="./Question __ javascript 마우스+동적이미지추가1_files/m01.png" style="left: 499px; top: 317px;"></body></html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #txtNum {
+            width: 210px;
+            height: 256px;
+            font-size: 11em;
+            font-weight: bold;
+            text-align: center;
+            border: 0px;
+            margin: 10px auto;
+            display: block;
+        }
+
+        img {
+            /* width: 100px;
+            height: 150px; */
+            /* display: inline-block; */
+            /* float:left; */
+            /* margin: 10px auto; */
+        }
+        
+
+        #n1 {
+            /* margin-left: -60px; */
+        }
+
+        body {
+            margin: 10px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="txtNum" name="txtNum" readonly value="00">
+    <div style=" text-align: center; margin-top: 0px; display: block;">
+        
+        <img src="../images/0.png" name="number" id="n1">  <!--십의 자리-->
+        <img src="../images/0.png" name="number1" id="n2"> <!--일의 자리-->
+    </div>
+    <script>
+        
+     var n = 0;
+     var n1=0;
+     var cnt = 0;
+        function count() {
+                n++;
+                if (n == 100) {
+                    n=0;
+                    n = "0"+0;
+                }
+                else if(n<10){
+                    n="0"+n;
+                }
+             return n;
+
+            }
+  
+        function count1() {
+            n1++;
+            // console.log(parseInt(n1/10));
+            // console.log(n1%10);
+
+             if (n1 == 100) {
+                n1 = 0;
+                number.src = "../images/" + parseInt(n1 / 10) + ".png";
+                number1.src = "../images/" + n1 % 10 + ".png";
+            } else if (n1 < 10) {
+                number.src = "../images/" + "0" + ".png";
+                number1.src = "../images/"  + n1 + ".png";
+            } else {
+                number.src = "../images/" + parseInt(n1 / 10) + ".png";
+                number1.src = "../images/" + n1 % 10 + ".png";
+            }
+        }
+
+        window.onmousedown = function () {
+            txtNum.value = count();
+            count1();
+        };
+
+      
+
+    </script>
+
+</body>
+
+</html>

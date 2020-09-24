@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cat {
+            position: absolute;
+            /* left: 0;
+            top: 0; */
+            /* 표지션을 주면 좌표값을 꼭줘야돼 */
+        }
+
+        
+        /* 객체와 객체가 겹쳐져 */
+        #cat1{ z-index: 1; left: 0px;top: 0px;}
+
+
+        #cat2 {
+            left: 125px;
+            top: 90px;
+        }
+
+        #cat3 {
+            left: 200px;
+            top: 150px;
+            z-index: 2;
+        }
+
+        #box {
+            border: 0px solid black;
+            /* 인라인 요소: 부모가 작으면 개행이 되는 성질 */
+            width: 1250px;
+            
+        }
+
+        #box .cats{
+            display: block;
+            float:left;
+            opacity: .6/*불투명도(0~1) 0 이면 투명*/;
+        }
+
+        #box .cats:hover{
+            opacity: 1;
+            position: relative;
+            /* left: 0px;
+            top: -10px;
+            width: 300px; */
+        }
+
+        .content{
+            opacity: .7;
+        }
+
+        .content > span{
+            /* color: red; */
+            /* text-decoration: underline; */
+            border-bottom: 1px dashed gray;
+
+
+        }
+
+        .content > span:hover {
+            opacity: 1;
+            color: red;
+        }
+
+        .data{
+            outline: none;
+            border: 1px solid #ccc;
+            padding: 3px;
+        }
+
+        .data:focus {
+            background-color: burlywood;
+            border-color: red;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <img src="../images/cat01.jpg" class="cat" id="cat1">
+    <img src="../images/cat02.jpg" class="cat" id="cat2">
+    <img src="../images/cat03.jpg" class="cat" id="cat3">
+    <!-- 골격을 수정하면 안돼 -->
+
+    <hr style = "margin-top: 500px;">
+
+    <div id = "box">
+    <img src="../images/cat01.jpg" class="cats">
+    <img src="../images/cat02.jpg" class="cats">
+    <img src="../images/cat03.jpg"class="cats">
+    <img src="../images/cat04.jpg" class="cats">
+    <img src="../images/cat05.jpg" class="cats">
+    <div style="clear: both";></div>
+    <!-- float left,right 를 하면 그 이후에 나오는 글자나 다른 요소들이 그 사진 주위 둘러싼 형태가 되므로 clear both로 없애 줌 -->
+    <!-- 막내가 정상적인 요소로 돌아오면서 정상 인식하기 시작 -->
+    </div>  
+
+    <hr>
+
+    <!-- :hover /:focus -->
+    <h1>제목입니다.</h1>
+    <p class = "content">Lorem ipsum dolor sit amet consectetur adipisicing elit. <span>Delectus ipsa ea sapiente corporis sunt!</span> Odit tenetur itaque ex perferendis illum. Atque alias culpa, recusandae quia qui repudiandae numquam laboriosam assumenda ut impedit reprehenderit ipsum rem,<span> fugiat, veritatis consequuntur? Obcaecati suscipit a facere distinctio,</span> voluptatum rem odio labore error voluptates maiores quisquam non officia. Laudantium aliquid veniam, <span> doloribus eum aut ducimus sequi eligendi doloremque excepturi atque deleniti cum culpa magnam unde laborum accusantium adipisci et nesciunt magni sapiente. Quo temporibus fuga eaque, accusamus saepe,</span> quibusdam harum cupiditate vel ab et dignissimos recusandae tempora eveniet quod nobis porro voluptas velit necessitatibus eum.</p>
+
+    <hr>
+
+    <h1>입력 화면</h1>
+
+    <div>데이터 : <input type = "text" class = "data"></div>
+    <div>짧은 데이터 : <input type = "text" class = "data" size="10"></div>
+    <div>긴데이터 : <input type = "text" class = "data" size="50"></div>
+
+    <div>데이터 : <input type = "text" class = "data"></div>
+    <div>짧은 데이터 : <input type = "text" class = "data" size="10"></div>
+    <div>긴데이터 : <input type = "text" class = "data" size="50"></div>
+
+    <div>데이터 : <input type = "text" class = "data"></div>
+    <div>짧은 데이터 : <input type = "text" class = "data" size="10"></div>
+    <div>긴데이터 : <input type = "text" class = "data" size="50"></div>
+
+    <div>데이터 : <input type = "text" class = "data"></div>
+    <div>짧은 데이터 : <input type = "text" class = "data" size="10"></div>
+    <div>긴데이터 : <input type = "text" class = "data" size="50"></div>
+    
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            margin-top: 100px;
+            border: 2px solid #EEEE;
+        }
+        #text {
+            border: 0px;
+            width: 400px;
+            font-weight: bold;
+            font-family: arial;
+            font-size: 20px;
+            /* text-align: center; */
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+        <td><img src="../images/img01.jpg" width="180" height="130" name = "img1" ></td>
+        <td><img src="../images/img02.jpg" width="180" height="130" name = "img2"></td>
+        <td><img src="../images/img03.jpg" width="180" height="130" name = "img3"></td>
+    </tr>
+    </table>
+    <input type="text" name="text" id="text" readonly=readonly>
+</body>
+  
+    <script>
+
+        var img = document.images;
+        var text = document.all.text;
+  
+        // var list = document.images;
+            var filename;
+            for (var i = 0; i < img.length; i++) {
+                img[i].onmouseover = function () {
+                    var src = event.srcElement.src;
+                    console.log(src);
+                    filename = src.substr(src.indexOf("s/") + 2, src.indexOf("."));
+                    console.log(filename);
+                    event.srcElement.src = "../images/img0" + (parseInt(filename.substr(3, 2)) + 3) + ".jpg";
+                    if (parseInt(filename.substr(3, 2)) == 1) {
+                        text.value = "'스키'타는 사람이 '당근'으로 변했습니다.";
+                    } else if (parseInt(filename.substr(3, 2)) == 2) {
+                        text.value = "'해바라기'가 '피망'으로 변했습니다.";
+                    } else if (parseInt(filename.substr(3, 2)) == 3) {
+                        text.value = "'나무'가 '개'가 됐습니다.";
+                    }
+
+                };
+                img[i].onmouseout = function () {
+                    console.log(parseInt(filename.substr(3, 2)));
+                    event.srcElement.src = "../images/img0" + parseInt(filename.substr(3, 2)) + ".jpg";
+
+
+                };
+            };
+        
+    </script>
+</html>

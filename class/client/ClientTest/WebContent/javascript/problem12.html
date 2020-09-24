@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width: 210px;
+            height: 210px;
+            font-weight: bold;
+            font-size: 10em;
+            text-align: center;
+            background-color: white;
+            border: 0px;
+        }
+        .main {
+            width: 500px;
+            height: 500px;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+<div class="main">
+    <div>
+        <input type="text" name="num" id="num" value="10">
+    </div>
+</div>
+
+<script>
+    var txt = document.all.num;
+    var n=10;
+    var timer = 0;
+    // timer = setInterval(function () {
+    //                         // txt1.value = n;
+    //                         //n++;
+
+    //                         //    txt1.size=n;
+    //                         //    n++;
+
+    //                         document.body.bgColor = colors[n];
+    //                         n++;
+    //                         if(n>6) n=0;
+                            
+    //                     }, 100);
+    //                 }
+    //             };
+
+    function test() {
+            timer = setInterval(function () {
+                txt.value = n;
+                n--;
+               window.onkeyup = function() {
+                   if (event.keyCode == 27) {
+                    clearInterval(timer);
+                    timer = 0;
+                    document.body.bgColor = "red";
+                }
+            }
+                if (n == 0) {
+                    clearInterval(timer);
+                    timer = 0;
+                    location.href = "http://google.com";
+                }
+            }, 1000);
+        }
+
+   test();
+
+</script>
+
+</html>

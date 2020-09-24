@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 870px;
+			border: 10px solid black;
+        }
+		#box::after {
+			content: ' ';
+			display: block;
+			clear: both;
+		}
+        #box div {
+            width: 100px;
+            height: 100px;
+            float: left;
+            margin-left: 1px;
+            margin-bottom: 2px;
+            column-count: 7;
+            border: 10px solid black;
+            /* transition-property: all; */
+           
+        }
+        /* width는 840보다 큰 값이면 상관 없는 건가? */
+        #box:hover div{
+            transform: rotate(180deg);
+            background-color: cornflowerblue;
+            /* transition: all 0.3s; */
+         }
+
+         #box div{
+            transform: rotate(-180deg);
+            background-color: white;
+            transition: all 0.3s;
+
+         }
+         /* transition all과 transition property all이 다른점 */
+		 /* transition 이 좀 더 큰 개념 */
+		 
+
+    </style>
+</head>
+<body>
+    <div style="width: 900px; margin: 30px auto;">
+		<h1 style="margin-top: 0px;">:hover + transform + transition</h1>
+		<div style="margin: 20px 0px; border-left: 3px dotted gray; padding-left: 10px;">
+			마우스가 올라간 상자를 회전시키고 배경색을 변화시키시오.
+		</div>
+		<div id="box">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>	
+    </div>
+
+</body>
+</html>

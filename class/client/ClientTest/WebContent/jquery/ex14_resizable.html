@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	<style>
+		#box1 { 
+			border: 1px solid black; 
+			width: 200px; height: 200px; 
+			background: gold; 
+		}
+
+		.helper {
+			border: 1px dotted #555;
+			background-color: cornflowerblue;
+			opacity: .3;
+		}
+
+		@keyframes key1 {
+            0% {
+                transform: scale(50,50);
+                opacity:0;
+            }
+            50% {
+                opacity: 0.2;
+            }
+            100% {
+                transform: scale(1,1);
+                opacity: 1;
+            }
+        }
+		
+	</style>
+</head>
+<body>
+	<!-- ex14_resizable.html -->
+
+	<div id="box1"></div>
+	<h1 id="title1">제목입니다.</h1>
+	<img src="../images/catty01.png" id="cat1">
+
+	<img src="../images/catty02.png" class="cat">
+	<img src="../images/catty03.png" class="cat">
+	<img src="../images/catty04.png" class="cat">
+	<img src="../images/catty05.png" class="cat">
+	<img src="../images/catty06.png" class="cat">
+
+	<script src="js/jquery-1.12.4.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script>
+
+		//$("#box1, #title1, #cat1").resizable();
+
+		$("#box1").resizable({
+			animate: true,
+			helper: "helper",
+			//자주 사용하는 로직을 재활용 할 수 있게 만든 일종의 Library
+			maxWidth: 300,
+			maxHeight: 300,
+			minWidth: 100,
+			minHeight: 100,
+			grid: [50, 40],
+			alsoResize: "#cat1" // 동시에 resize
+		});
+
+		$("#cat1").resizable({
+			//종횡비 유지
+			aspectRatio: true,
+			alsoResize: ".cat"
+           
+		});
+
+		
+
+	</script>
+</body>
+</html>

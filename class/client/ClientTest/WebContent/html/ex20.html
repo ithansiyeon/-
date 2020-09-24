@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+
+        HTML5 추가된 태그~
+        - 페이지 레이아웃 구성하는 용도 
+        - 렌더링 결과가 <div>와 동일(아무런 특징 없는 블럭 태그)
+
+        1. <header>
+                : 해당 영역의 머릿말 역할 
+        2. <nav>
+                : 메뉴 역할 
+        3. <section>
+                : 주요 콘텐츠 역할
+        4. <article>
+                : 주요 콘텐츠 아이템 역할
+        5. <aside>
+                : 보조 콘텐츠 역할
+        6. <footer>
+                : 바닥글 역할 
+
+     -->
+
+     <h1>이전 방식(div 태그)</h1>
+
+     <div id = "m1" class = "group">강아지</div>
+     <div id = "m2" class = "group">고양이</div>
+     <div id = "m3" calss = "party">고등어</div>
+     <!-- 한 페이지 내에서 id가 유일해야 돼, class 비슷한 얘들 끼리 묶기 위한 식별자 -->
+     <div id="유일값 식별자" class = "그룹 식별자">
+
+     </div>
+     <br>
+     <div id = "main">
+        <div id = "mainmenu">메인 메뉴</div>
+        <div id = "submenu">보조 메뉴</div>
+        <div id = "content">
+            <div class = "item">콘텐츠 아이템</div>
+            <div class = "item">콘텐츠 아이템</div>
+            <div class = "item">콘텐츠 아이템</div>
+            <div id = "subcontent">추가 콘텐츠</div>
+
+        </div>
+    </div>
+    <!-- 이전 방식은 개발자가 마음대로 이름을 정할 수 있어, 개발자 마다 통일안되어서 보기가 힘들어져서 div: 자유롭게 쓸 수 있어, 아무 의미 없는 div를 사용함-->
+     <div id = "footer">하단부</div>
+
+     <h1>현재 방식(HTML5)</h1>
+     <main>
+         <headder>
+         <nav>메인 메뉴</nav>
+         </headder>
+         <nav>보조 메뉴</nav>
+         <section>
+                <article>콘텐츠 아이템</article>
+                <article>콘텐츠 아이템</article>
+                <article>콘텐츠 아이템</article>
+                <aside>추가 콘텐츠</aside>
+         </section>
+         <footer>하단부</footer>
+       
+     </main>
+<!-- section은 몸통, 전달력이 높아졌어, 의미를 갖는 -->
+
+</body>
+</html>

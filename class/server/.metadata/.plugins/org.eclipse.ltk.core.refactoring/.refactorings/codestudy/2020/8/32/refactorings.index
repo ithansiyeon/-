@@ -1,0 +1,9 @@
+1596435512796	Encapsulate field 'name'
+1596501160948	Encapsulate field 'gap'
+1596503718590	Encapsulate field 'id'
+1596591671887	Encapsulate field 'seq'
+1596591789293	Rename type 'CommnetDTO'
+1596598444090	Encapsulate field 'commentcount'
+1596692593492	Encapsulate field 'thread'
+1596692597306	Encapsulate field 'depth'
+1596895443799	Delete element

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cat {
+            position: absolute;
+            transition: all 1s;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="../images/catty01.png" id="cat" style="left: 393px; top: 391px">
+    </div>
+    <script>
+
+        var newX = 0; 
+        var newY = 0;
+        var img = document.getElementById("cat");
+
+        window.onmousedown = function () {
+              
+                 img.style.left = event.clientX - 50 + "px";
+                 img.style.top = event.clientY - 50 + "px";
+
+                // newX = event.clientX-50;
+                // newY = event.clientY-50;
+
+                // console.log(newX);
+                // console.log(newY);
+
+                // img.style.transform = "translate(" + newX + "px," + newY +"px)";
+
+                // oldX = newX;
+            };
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tbl1 {
+            border: 1px solid black;
+            width: 590px;
+            height: 590px;
+            border-collapse: collapse;
+        }
+
+        .cell {
+            border: 1px solid black;
+            width: 115px;
+            height: 115px;
+        }
+
+        img {
+            background-size: cover;
+            width: 115px;
+            height: 115px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    </div>
+    <table id="tbl1">
+        <tr>
+            <td class="cell"><img src="../images/beer.png"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+        </tr>
+        <tr>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+        </tr>
+        <tr>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+        </tr>
+        <tr>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+        </tr>
+        <tr>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"><img src="../images/catHome.png"></td>
+        </tr>
+    </table>
+    </div>
+    <script>
+        var index = 0;
+        var tr = document.getElementsByTagName("tr");
+        var td = document.getElementsByTagName("td");
+        var timer = 0;
+        var row = 0;
+        for (var i = 0; i < tr.length; i++) {
+            tr[i].firstElementChild.onclick = function () {
+
+                if (timer == 0 && index <= 24) {
+                    timer = setInterval(function () {
+                        clear();
+                        if(row%2==0){
+                            index++;
+                            td[index].innerHTML = "<img src = '../images/catty14.png'>"
+                            // console.log(index);
+                           
+                        } else if(row%2==1){    
+                            td[index].innerHTML = "<img src = '../images/catty14.png'>"
+                            // console.log(index);
+                            index--;
+                        }
+                     
+                       
+                        if(index%5==4) {
+                             row++;
+                             index+=5;
+                        }
+                        if (index >= 25) {
+                            // console.log(1);
+                            clearInterval(timer);
+                            timer = 0;
+                        }
+                    }, 1000);
+                }
+
+            };
+        }
+
+        function clear() {
+            for (var i = 1; i < td.length - 1; i++) {
+                td[i].innerHTML = "";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+package com.test.dummy;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Calendar;
+
+public class ReservationDummy {
+	public static void main(String[] args) {
+		
+		String bookdate[] = {"2020-06-29","2020-06-30"};
+		String state[] = {"완료","취소","만료","환불"};
+		// 매수는 0~10개 정도로 하고 
+		Calendar c = Calendar.getInstance();
+		ArrayList <String> date = new ArrayList<String>();
+		//9300개 
+		String line = null;
+		try {
+			BufferedReader reader = new BufferedReader(new FileReader("D:\\회차날짜.txt"));
+			while(reader.readLine())
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+	}
+
+}

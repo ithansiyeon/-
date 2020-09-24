@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+          <div class="code"><i class="fas fa-keyboard"></i> </div>
+
+    <script>
+          var img;
+         window.addEventListener("mousedown",function(){
+            if(event.buttons == 1) {
+                img = document.createElement("img");
+
+                // box.style.border = "1px solid black";
+                // box.style.width = "150px"
+                // box.style.height = "150px"
+                // box.style.position = "absolute"
+
+                // code.className = "code";
+                // code.src ='../images/m01.png';
+                img.setAttribute("class", "item");
+			    img.setAttribute("src", "../images/m01.png");
+                img.style.left = event.clientX - 75 + "px";
+                img.style.top = event.clientY - 75 + "px";
+
+                document.body.appendChild(img);
+
+            } 
+        });
+    </script>
+</body>
+</html>

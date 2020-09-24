@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <style>
+        button{
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+            border: 0px;
+        }
+
+        i {
+            font-size: 3em;
+            color: black;
+        }
+
+        button:disabled{
+        background-color:gray;
+         }
+
+        button:enabled{
+            background-color: white;
+        }
+
+       
+    </style>
+</head>
+<body>
+    
+	<div id="list">
+		<button type="button" name="btn"><i class="fas fa-dog"></i></button>
+		<button type="button" name="btn" disabled><i class="fas fa-paw"></i></button>
+		<button type="button" name="btn" disabled><i class="fas fa-bone"></i></button>
+		<button type="button" name="btn" disabled><i class="fas fa-frog"></i></button>
+		<button type="button" name="btn" disabled><i class="fas fa-cat"></i></button>
+		<button type="button" name="btn" disabled><i class="fas fa-piggy-bank"></i></button>
+		<button type="button" name="btn" disabled><i class="fas fa-horse"></i></button>
+		<button type="button" name="btn" disabled><i class="fas fa-dove"></i></button>
+		<button type="button" name="btn" disabled><i class="fas fa-drumstick-bite"></i></button>
+		<button type="button" name="btn" disabled><i class="fas fa-fish"></i></button>
+	</div>
+ 
+    <script>
+    var timer = 0;
+    var index = 0;
+    var btn = document.all.btn;
+    var list = document.all.list;
+        function time() {
+
+
+            //for (var i = 0; i < btn.length; i++) {
+            timer = setInterval(function () {
+                //btn[i].disabled = false;
+                //?
+                //활성화
+
+                for (var i = 0; i < btn.length; i++) {
+                    btn[i].disabled = true;
+
+                }
+                btn[index].disabled = false;
+                index++;
+                if (index >= btn.length) {
+                    index = 0;
+                }
+                console.log(timer);
+            }, 100);
+            //}
+
+            for (var i = 0; i < btn.length; i++) {
+                btn[i].onclick = function () {
+                    if (event.srcElement.bgColor == "white") {
+                        timer = 0;
+                        clearInterval(timer);
+                        document.body.bgColor = "cornflowerblue";
+                    }
+                };
+            }
+        }
+
+    time();
+    
+    </script>
+</body>
+</html>

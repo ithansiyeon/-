@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #place {
+            width: 1000px;
+            min-height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div id="place"></div>
+    </div>
+
+    <script>
+        var place = document.getElementById("place");
+        var n = 0;
+       window.onkeyup = function(){
+            if ((event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode >= 96 && event.keyCode <= 105)) { 
+                if(event.keyCode>=48) {
+                    n = event.keyCode-48;
+                } else if(event.keyCode>=96) {
+                    n=event.keyCode-96;
+                }
+                place.innerHTML += "<img src = ../images/" + n + ".png>";
+            }
+        };
+    </script>
+</body>
+</html>

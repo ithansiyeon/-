@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+       #tbl1 td {
+        border: 1px solid #A9A9A9;
+        width: 126px;
+        height: 126px;
+        font-size: 5em;
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+        color: #444;
+      
+       }
+      #tbl1 {
+        border-collapse: collapse;
+      }
+      .main{
+          width: 5000px;
+          margin: 80px auto;
+      }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <table id="tbl1">
+            <tr>
+                <td class="cell">0</td>
+                <td class="cell">0</td>
+                <td class="cell">0</td>
+                <td class="cell">0</td>
+                <td class="cell">0</td>			
+            </tr>
+            <tr>
+                <td class="cell">0</td>
+                <td class="cell">0</td>
+                <td class="cell">0</td>
+                <td class="cell">0</td>
+                <td class="cell">0</td>			
+            </tr>
+            <tr>
+                <td class="cell">0</td>
+                <td class="cell">0</td>
+                <td class="cell">0</td>
+                <td class="cell">0</td>
+                <td class="cell">0</td>			
+            </tr>
+            <tr>
+                <td class="cell">0</td>
+                <td class="cell">0</td>
+                <td class="cell">0</td>
+                <td class="cell">0</td>
+                <td class="cell">0</td>			
+            </tr>
+            <tr>
+                <td class="cell">0</td>
+                <td class="cell">0</td>
+                <td class="cell">0</td>
+                <td class="cell">0</td>
+                <td class="cell">0</td>			
+            </tr>
+        </table>
+        <script>
+         var tr = document.getElementById("tbl1").firstElementChild.children;
+            var n = 0;
+            for (var i = 0; i < tr.length; i++) {
+                var td = tr[i].children;
+
+                for (var j = 0; j < td.length; j++) {
+                    // <td> x 9
+                    // td[j].onclick = function(){
+                    //     // alert('click'); // 포커스가 가는 얘들은 키보드로도 클릭 가능, mouse 이벤트가 아니야  
+                    //     alert(event.buttons);
+                    // };
+
+                    td[j].onmousedown = function () {
+                        // alert('down');
+                        // alert(event.buttons);
+
+                        // event.srcElement.bgColor = "gold";
+                        // console.log(event.srcElement.nodeName);
+                        // if (n <= 0) {
+                        //         td.onmousedown = null;
+                        //     }
+
+                        if (event.buttons == 1) {
+                            n++;
+                            event.srcElement.textContent = n;
+
+                        } else if (event.buttons == 2) {
+                            n--;
+
+                            if ( event.srcElement.textContent <= 0) {
+                                n=0;
+                                event.srcElement.bgColor = "gray";
+                                event.srcElement.onmousedown = null;
+                               
+                            }  else if(n>=0) {
+                                event.srcElement.textContent = n;
+                            }
+                        }
+                        // 기존의 이미지가 있어도 덮어 쓰기가 가능함 
+                        if(event.srcElement.bgColor=="gray"){
+                        // event.srcElement
+                    }
+                    };
+                   
+
+                }
+               
+                // n=0;
+            }
+        </script>
+</body>
+</html>

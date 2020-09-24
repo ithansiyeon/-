@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*  */
+        /* label이 인라인이니까 */
+        #main h1 {
+            font-weight: bold;
+            font-variant: small-caps;
+            font-size: 32px;
+            width: 500px;
+        }
+        input #rb1{
+            display: none;
+        }
+        label{      
+            display: block;
+            float: left;
+            width: 150px;
+            height: 150px;
+            font-size: 48px;
+            background-color: #EEEEEE;
+            padding-top: 20px;
+            border-top-left-radius: 5%;
+            border-bottom-left-radius: 5%;
+            font-variant: small-caps;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+            left:0px;
+            top:0px;
+            z-index: 1;
+            /* 각자 달라 (0,0) */
+        
+        }
+        #main input[name=rb]{
+            display: none;
+            width: 500px;
+        }
+
+        /* #disc1::after{
+            content: " ";
+            clear: both;
+            display: block;
+        } */
+
+        div #disc1{
+            float: left;
+            width: 170px;
+            height: 170px;
+            margin-left: 6px;
+            background-image: url(../images/lp01.png);
+            
+            border-top-right-radius: 5%;
+            border-bottom-right-radius: 5%;
+            background-position: center center;
+            background-size: 100% 100%;
+            animation-duration: .5s;
+            /* padding-left: 10px; */
+            /* overflow: hidden; */
+        }
+
+        div #disc2{
+            float: left;
+            width: 170px;
+            height: 170px;
+            margin-left: 6px;
+            background-image: url(../images/lp02.png);
+           
+            border-top-right-radius: 5%;
+            border-bottom-right-radius: 5%;
+            background-position: center center;
+            background-size: 100% 100%;
+            animation-duration: .5s;
+            /* overflow: hidden; */
+        }
+
+        div #disc3{
+            float: left;
+            width: 170px;
+            height: 170px;
+            margin-left: 6px;
+            background-image: url(../images/lp03.png);
+           
+            border-top-right-radius: 5%;
+            border-bottom-right-radius: 5%;
+            background-position: center center;
+            background-size: 100% 100%;
+            animation-duration: .5s;
+            /* overflow: hidden; */
+        }
+
+        div #disc4{
+            float: left;
+            width: 170px;
+            height: 170px;
+            margin-left: 6px;
+            background-image: url(../images/lp04.png);
+            
+            border-top-right-radius: 5%;
+            border-bottom-right-radius: 5%;
+            background-position: center center;
+            background-size: 100% 100%;
+            animation-duration: .5s;
+            /* overflow: hidden; */
+        }
+
+        div .item{
+            width: 330px;
+            height: 172px;
+            margin: 0px 0px 5px;
+            border: 1px solid gray;
+            border-top-right-radius: 5%;
+            border-bottom-right-radius: 5%;
+            border-top-left-radius: 5%;
+            border-bottom-left-radius: 5%;
+            overflow: hidden;
+            
+        }
+        #rb1:checked ~ #disc1{
+            /* background-color: blue; */
+             animation-iteration-count: infinite;
+             animation-name: key1;
+
+        }
+
+        #rb2:checked ~ #disc2{
+            /* background-color: blue; */
+             animation-iteration-count: infinite;
+             animation-name: key1;
+
+        }
+
+        #rb3:checked ~ #disc3{
+            /* background-color: blue; */
+             animation-iteration-count: infinite;
+             animation-name: key1;
+
+        }
+
+        #rb4:checked ~ #disc4{
+            /* background-color: blue; */
+             animation-iteration-count: infinite;
+             animation-name: key1;
+
+        }
+
+       #rb1:checked + label{
+           cursor:pointer
+        }
+
+        #rb2:checked + label{
+           cursor:pointer
+        }
+
+        #rb3:checked + label{
+           cursor:pointer
+        }
+
+        #rb4:checked + label{
+           cursor:pointer
+        }
+        
+         @keyframes key1{
+            from {transform:rotate(0deg);}
+            to {transform: rotate(360deg);}
+         }
+
+
+    </style>
+</head>
+<body>
+    <div style="display: block; width: 500px; height: 500px; margin: 0px auto;">
+    <div id="main">
+        <h1>Music</h1>
+        <div class="item">
+            <input type="radio" name="rb" id="rb1">
+            <label for="rb1">Play</label>
+            <div class="disc" id="disc1"></div>
+        </div>
+        <div class="item">
+            <input type="radio" name="rb" id="rb2">
+            <label for="rb2">Play</label>
+            <div class="disc" id="disc2"></div>
+        </div>
+        <div class="item">
+            <input type="radio" name="rb" id="rb3">
+            <label for="rb3">Play</label>
+            <div class="disc" id="disc3"></div>
+        </div>
+        <div class="item">
+            <input type="radio" name="rb" id="rb4">
+            <label for="rb4">Play</label>
+            <div class="disc" id="disc4"></div>
+        </div>
+    </div>		
+</div>
+</body>
+</html>

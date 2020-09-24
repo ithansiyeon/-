@@ -1,0 +1,8 @@
+package com.test.dummy;
+
+public class ReservationDummy {
+	public static void main(String[] args) {
+		
+	}
+
+}

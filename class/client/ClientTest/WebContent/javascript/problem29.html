@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            position: absolute;
+            /* left: 500px; */
+            top: 300px;
+            /* transition: all 1s linear; */
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div><img src="../images/item15.gif" id="img1" style = "left :500px"/></div>
+</body>
+<script>
+    var img1 = document.getElementById("img1");
+        img1.onmouseover = function () {
+            console.log(event.offsetX);
+            var ox = parseInt(img1.style.left); // 500
+            if (event.offsetX >= 0 && event.offsetX <= 64) {
+                event.srcElement.style.left = ox + 60 + "px";
+            } else if (event.offsetX >= 65 && event.offsetX <= 128) {
+                event.srcElement.style.left = ox - 60 + "px";
+            }
+        };
+   
+</script>
+
+</html>

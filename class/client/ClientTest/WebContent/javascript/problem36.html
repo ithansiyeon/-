@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cat {
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            transition: all;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="../images/catty01.png" class = "cat" id="img1" style = "z-index: 21; left :832px; top: 312px; display: block;">
+        <img src="../images/catty02.png" class = "cat" id="img2" style = "z-index: 20; left :832px; top: 312px; display: block;">
+        <img src="../images/catty03.png" class = "cat" id="img3" style = "z-index: 19; left :832px; top: 312px; display: block;">
+        <img src="../images/catty04.png" class = "cat" id="img4" style = "z-index: 18; left :832px; top: 312px; display: block;">
+        <img src="../images/catty05.png" class = "cat" id="img5" style = "z-index: 17; left :832px; top: 312px; display: block;">
+        <img src="../images/catty06.png" class = "cat" id="img6" style = "z-index: 16; left :832px; top: 312px; display: block;">
+        <img src="../images/catty07.png" class = "cat" id="img7" style = "z-index: 15; left :832px; top: 312px; display: block;">
+        <img src="../images/catty08.png" class = "cat" id="img8" style = "z-index: 14; left :832px; top: 312px; display: block;">
+        <img src="../images/catty09.png" class = "cat" id="img9" style = "z-index: 13; left :832px; top: 312px; display: block;">
+        <img src="../images/catty10.png" class = "cat" id="img10" style = "z-index: 12; left :832px; top: 312px; display: block;">
+        <img src="../images/catty11.png" class = "cat" id="img11" style = "z-index: 11; left :832px; top: 312px; display: block;">
+        <img src="../images/catty12.png" class = "cat" id="img12" style = "z-index: 10; left :832px; top: 312px; display: block;">
+        <img src="../images/catty13.png" class = "cat" id="img13" style = "z-index: 9; left :832px; top: 312px; display: block;">
+        <img src="../images/catty14.png" class = "cat" id="img14" style = "z-index: 8; left :832px; top: 312px; display: block;">
+        <img src="../images/catty15.png" class = "cat" id="img15" style = "z-index: 7; left :832px; top: 312px; display: block;">
+        <img src="../images/catty16.png" class = "cat" id="img16" style = "z-index: 6; left :832px; top: 312px; display: block;">
+        <img src="../images/catty17.png" class = "cat" id="img17" style = "z-index: 5; left :832px; top: 312px; display: block;">
+        <img src="../images/catty18.png" class = "cat" id="img18" style = "z-index: 4; left :832px; top: 312px; display: block;">
+        <img src="../images/catty19.png" class = "cat" id="img19" style = "z-index: 3; left :832px; top: 312px; display: block;">
+        <img src="../images/catty20.png" class = "cat" id="img20" style = "z-index: 2; left :832px; top: 312px; display: block;">
+        <img src="../images/catty21.png" class = "cat" id="img21" style = "z-index: 1; left :832px; top: 312px; display: block;">
+        </div>
+
+        <script>
+            var pathX = [];
+            var pathY = [];
+            var cat = document.getElementsByClassName("cat");
+           
+            window.onmousemove = function () {
+                    var x = event.clientX - 64;
+                    var y = event.clientY - 64;
+                
+                    pathX.push(x);
+                    pathY.push(y);
+                    console.log(pathX);
+                    console.log(pathY);
+
+                    move();
+                    if (pathX.length > cat.length) { 
+                        for(var i=0;i<pathX.length;i++) {
+                        pathX.shift();
+                        pathY.shift();
+                       
+                        }
+                    } 
+
+                };
+
+                function move() {
+                    if(pathX.length==cat.length) {
+                        for (var i = 0; i < pathX.length; i++) {
+                            cat[i].style.left = pathX[i]+"px";
+                            cat[i].style.top = pathY[i]+"px";
+                            cat[i].style.transitionDuration = 0.1 + "s";
+                        }
+                    }  
+                }
+            
+        </script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        CSS 선택자 + 툴 기능
+
+        Emmet(= Zen Coding)
+        - 편집기 확장 기능 
+        - CSS 선택자를 사용해서 HTML 코드 작업을 쉽게 도와주는 기능 
+        - http://emmet.io
+     -->
+
+     <h1>태그 선택자</h1>
+     <!-- div { color: blue; } -->
+     <div></div>
+     
+     <div id="box1" class="item"></div>
+     <!-- 역으로 만들어주는 기능 -->
+     
+     div
+     <div></div>
+
+     p
+     <p></p>
+     <!-- p는 문단 -->
+    a
+    <a href="url">content</a>
+    <!-- 필수로 가져야되는 속성까지 채워 -->
+    <!-- <a></a> 태그는 하이퍼링크를 걸어주는 태그입니다. -->
+    
+    img
+    <img src="url" alt="설명">
+    
+    input 
+    <input type="button">
+    
+    <h1>id 선택자</h1>
+
+     <!-- div#box1{} -->
+     <div id="box1">상자</div>
+   
+     <!-- h1#title1 -->
+     <h1 id="title1">제목</h1>
+     
+     <!-- nav#mainmenu -->
+     <nav id="mainmenu">메인 메뉴</nav>
+   
+     <!-- #box {} -->
+     <div id="box"></div>
+     
+     <!-- 모든 태그이면 못 만들어 -->
+
+     <h1>class 선택자</h1>
+     <!-- div.item{} -->
+    
+     <!-- div.item -->
+     <div class="item"></div>
+   
+     <!-- p.description -->
+     <p class="description"></p>
+    
+     img.pic
+     <img src="" alt="" class="pic">
+    
+     .item
+     <div class="item"></div>
+     <!-- 여기서는 div로 해석해 -->
+
+     div.type1.type2.type3
+     <div class="type1 type2 type3"></div>
+     <!-- 3개의 class를 한 요소에 넣은 것 -->
+     div#box1.box.red.big
+     <div id="box1" class="box red big"></div>
+     
+     <h1>속성 선택자</h1>
+     <!-- CSS3 -->
+     <!-- div[title] {} -->
+     div[title]
+     <div title=""></div>
+     <!-- 웹페이지의 제목을 나타내는 태그 -->
+
+     img[title]
+     <img src="" alt="" title="">
+     <!-- title 속성 -->
+     
+     img[title]#pic1.pics
+     <img src="aaaa" alt="aaaa" title="aaa" id="pic1" class="pics">
+
+     div[title='상자']
+     div[title=상자]
+     <div title="상자"></div>
+    
+     img[width height]
+     <img src="" alt="" width="" height="">
+
+     img[title width=100 height=200]#pic1.pics
+     <img src="" alt="" title="" width="100" height="200" id="pic1" class="pics">
+
+     <h1>PCDATA</h1>
+     <!-- 시작 태그와 종료 태그 사이에 위치한 텍스트를 PCDATA -->
+     <div>상자</div>
+
+     div{상자}
+     <div>상자</div>
+     
+    <!-- 중괄호로 내용 입력 -->
+
+    a[href=http://naver.com]{네이버로 이동합니다.}
+    <a href="http://naver.com">네이버로 이동합니다.</a>
+    
+    div[title=상자]#box1.item{상자}
+    <div title="상자" id="box1" class="item">상자</div>
+   
+    div#box1.item[title=상자]>{상자}
+    <div id="box1" class="item" title="상자">상자</div>
+
+    ----------------------------------------------------- 기본 요소
+
+    <h1> 기본 요소 조합 x 생산성 증가 -> 반복 </h1>
+
+    div*5
+   
+    div.item*5
+
+    div.item[title]{아이템}*5
+
+    div#item1*5
+    div#item1$*5  
+    div{상자$}*5
+    div[title=상자$]*5   
+    h$*6
+    div#item$$*5
+    a[href='view.jsp?seq=$']{글보기}*5
+
+     <h1>형제 선택자</h1>
+     a ~ b : 형(위)
+     a + b : 형(바로 위)
+    
+     div+p
+     h1+p
+     h1#title{제목입니다.}+p.description{문단입니다.}
+     h1#title{제목입니다.}+p.description{문단입니다.}*3
+     (h1#title{제목입니다.}+p.description{문단입니다.})*3
+    
+     <!-- <a> 하이퍼링크를 걸어주는 태그 -->
+
+     <h1>자식 선택자</h1>
+     a b : 자손
+     a > b : 자식
+            
+
+     div>span
+     <div><span></span></div>
+     부모와 자식 
+
+    ul>li
+    ul>li*5
+    ul#list1>li.item{항목$}*5
+    h1#title{오늘의 할일}+(ul#list>li.item{할일$}*5)+div{할일을 미루지 말자!!!}
+    <!-- table#tbl1>tr>td{안녕}*3     -->
+    <h1>10행 5열 테이블</h1>
+
+    table>tr>td
+    table>tr*10>td*5
+	table#tbl1>tr>th*5
+	table#tbl1>(tr>th*5)+(tr>td*5)
+	table#tbl1>(tr>th*5)+(tr>td*5)*9
+	table#tbl1>(tr>th#col$*5)+(tr>td.cell$*5)*9
+    
+    
+    <!-- 같은 열에 있는 애들은 같은 서식으로  -->
+
+    lorem ipsum 
+    로렘 입숨은 출판이나 그래픽 디자인 분야에서 폰트, 타이포그래피, 레이아웃 같은 그래픽 요소나 시각적 연출을 보여줄 때 사용하는 표준 채우기 텍스트로, 
+    최종 결과물에 들어가는 실제적인 문장 내용이 채워지기 전에 시각 디자인 프로젝트 모형의 채움 글로도 이용된다.
+
+    h1#title
+    <h1 id="title">제목입니다.</h1>
+    <p>문단입니다.문단입니다.문단입니다.문단입니다.문단입니다.문단입니다.문단입니다.문단입니다.문단입니다.문단입니다.문단입니다.문단입니다.문단입니다.문단입니다.문단입니다.문단입니다.문단입니다.문단입니다.문단입니다.문단입니다.문단입니다.문단입니다.문단입니다.문단입니다.문단입니다.문단입니다.문단입니다.문단입니다.문단입니다.</p>
+    
+
+	lorem
+	h1{lorem}
+	h1>lorem
+	h1>lorem
+	h1>lorem5
+	h1>lorem1
+    
+    ((h1>lorem5)+(p>lorem50)*3)*5
+    <h1>Lorem ipsum dolor sit amet.</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto mollitia natus excepturi consequatur maxime quam voluptates sequi optio non ea reprehenderit, molestiae quod! Molestias repellat aliquid, nobis qui autem, omnis excepturi perferendis est tenetur laboriosam, eos repellendus illo sequi? Harum magni, sequi accusantium labore molestiae maxime ex? Laborum, labore dolor?</p>
+    <p>Rem, sunt! Aut expedita officiis voluptatem soluta explicabo assumenda nisi esse? Soluta eius quaerat accusamus nesciunt porro fugiat dicta dolor cupiditate, praesentium, pariatur magni voluptate neque. Dicta velit cum dolorem illum perferendis mollitia quidem quia enim vitae quos, reprehenderit ullam molestiae in tenetur omnis non beatae sapiente nihil saepe dolore!</p>
+    <p>Impedit tempora est doloremque minima excepturi inventore ut. Temporibus minus impedit odit velit aut ut non adipisci fugiat incidunt natus, necessitatibus sunt, ipsa culpa. Quos dolorem illum nisi explicabo placeat! Laborum veritatis sunt magni deserunt deleniti suscipit recusandae aperiam quasi doloremque laboriosam ab labore, maxime est repellat eveniet perferendis illo.</p>
+    <p>Labore quasi, molestiae incidunt nam accusamus atque delectus debitis aliquid beatae velit accusantium commodi aliquam deserunt consequuntur ipsa dolores doloribus blanditiis! Aliquid harum explicabo suscipit ipsam dolor voluptate, beatae eaque voluptates adipisci nisi ut similique dolores sit doloremque vitae, impedit aspernatur. Perspiciatis, vel. Nesciunt perspiciatis harum minima dolore maiores fugiat?</p>
+    <p>Illo ab obcaecati eveniet mollitia eaque excepturi reprehenderit nesciunt nostrum, commodi ex, molestiae quo sapiente dolorum et provident asperiores in. Itaque officiis doloremque natus nobis, aspernatur necessitatibus delectus reiciendis placeat dolores, eaque sequi dolorem cumque aut tempora, error quibusdam eos! Eveniet, commodi doloribus veritatis itaque placeat ab suscipit deleniti quae.</p>
+
+    
+
+
+</body>
+</html>

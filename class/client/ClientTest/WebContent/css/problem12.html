@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 830px;
+            margin-left: 30px;
+        }
+
+        #box::after {
+            content: ' ';
+            display: block;
+            clear: both;
+        }
+
+       .col1 img{
+            display: block;
+            width: 146px;
+            height: 146px;
+            margin: 0px auto;
+            transform: translate(-146px,0px);
+        }
+        .col2 img{
+            display: block;
+            width: 146px;
+            height: 146px;
+            margin: 0px auto;
+            opacity: 0;
+        }
+
+        .col3 img{
+            display: block;
+            width: 146px;
+            height: 146px;
+            margin: 0px auto;
+            transform:scale(0,0);
+        }
+        .col4 img{
+            display: block;
+            width: 146px;
+            height: 146px;
+            margin: 0px auto;
+            transform: translate(-146px,0px) scale(0,0) rotate(-360deg);
+        }
+        /* transform: translate() scale() rotate()  */
+        .row1 div {
+            width: 146px;
+            height: 146px;
+            border: 10px solid black;
+            float: left;
+            margin-bottom: 10px;
+            overflow: hidden;
+            margin-left: -10px;
+        }
+
+        .row2 div {
+            width: 146px;
+            height: 146px;
+            border: 10px solid black;
+            float: left;
+            margin-bottom: 10px;
+            overflow: hidden;
+            margin-left: -10px;
+        }
+
+        .row3 div {
+            width: 146px;
+            height: 146px;
+            border: 10px solid black;
+            float: left;
+            margin-bottom: 10px;
+            overflow: hidden;
+            margin-left: -10px;
+        }
+
+        .row4 div {
+            width: 146px;
+            height: 146px;
+            border: 10px solid black;
+            float: left;
+            margin-bottom: 10px;
+            overflow: hidden;
+            margin-left: -10px;
+        }
+        /* transform: translate() scale() rotate() */
+        
+        @keyframes key1 {
+
+            /* 속성 지정 + 어떤 변화 -> 자세하게 지정 가능 */
+        
+            from {transform: translate(-146px, 0px);}
+            to {transform: translate(0px, 0px);}
+
+        }
+
+        .row1 .col1:hover img{
+            animation-name: key1;
+            animation-fill-mode: forwards;
+            animation-duration: .75s;
+            opacity: 1;
+        }
+
+
+        @keyframes key2 {
+            /* 속성 지정 + 어떤 변화 -> 자세하게 지정 가능 */
+            from {opacity: 0;}
+            to {opacity: 1;}
+          
+        }
+
+        .row2 .col2:hover img{
+            animation-name: key2;
+            animation-fill-mode: forwards;
+            animation-duration: .75s;
+            opacity: 1;
+        }
+
+       
+        @keyframes key3 {
+            /* 속성 지정 + 어떤 변화 -> 자세하게 지정 가능 */
+            from {transform: scale(0,0);}
+            to {transform: scale(1,1)}
+
+        }
+
+        
+        .row3 .col3:hover img{
+            animation-name: key3;
+            animation-duration: .75s;
+            animation-fill-mode: forwards;
+           
+           
+        }
+        /* transform: translate(-146px,0px) scale(0,0) rotate(-270deg); */
+        @keyframes key4 {
+            /* 속성 지정 + 어떤 변화 -> 자세하게 지정 가능 */
+          
+            from {transform: translate(-146px,0px) scale(0,0) rotate(-360deg); }
+            to {transform: translate(0px,0px) scale(1,1) rotate(0deg);}
+        }
+        .row4 .col4:hover img{
+            animation-name: key4;
+            animation-duration: .75s;
+            animation-fill-mode: forwards;
+           
+        }
+
+    </style>
+</head>
+
+<body>
+    <div style="width: 900px; margin: 30px auto;">
+        <h1>:hover+transform+transition</h1>
+        <!-- border left는 요소의 왼쪽 테두리를 설정 -->
+        <div style="margin: 20px 0px; border-left: dotted 3px gray;padding-left: 10px;">
+            마우스를 올리면 반응하시오.
+        </div>
+        <div id="box">
+            <div class="row1">
+                <div class="col1"><img src="../images/rect_icon01.png"></div>
+                <div class="col1"><img src="../images/rect_icon02.png"></div>
+                <div class="col1"><img src="../images/rect_icon03.png"></div>
+                <div class="col1"><img src="../images/rect_icon04.png"></div>
+                <div class="col1"><img src="../images/rect_icon05.png"></div>
+            </div>
+
+            <div class="row2">
+                <div class="col2"><img src="../images/rect_icon01.png"></div>
+                <div class="col2"><img src="../images/rect_icon02.png"></div>
+                <div class="col2"><img src="../images/rect_icon03.png"></div>
+                <div class="col2"><img src="../images/rect_icon04.png"></div>
+                <div class="col2"><img src="../images/rect_icon05.png"></div>
+            </div>
+
+            <div class="row3">
+                <div class="col3"><img src="../images/rect_icon01.png"></div>
+                <div class="col3"><img src="../images/rect_icon02.png"></div>
+                <div class="col3"><img src="../images/rect_icon03.png"></div>
+                <div class="col3"><img src="../images/rect_icon04.png"></div>
+                <div class="col3"><img src="../images/rect_icon05.png"></div>
+            </div>
+
+            <div class="row4">
+                <div class="col4"><img src="../images/rect_icon01.png"></div>
+                <div class="col4"><img src="../images/rect_icon02.png"></div>
+                <div class="col4"><img src="../images/rect_icon03.png"></div>
+                <div class="col4"><img src="../images/rect_icon04.png"></div>
+                <div class="col4"><img src="../images/rect_icon05.png"></div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

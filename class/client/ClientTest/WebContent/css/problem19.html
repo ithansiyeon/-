@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            /* <img src = "../images/rect_icon01.png">; */
+            font-size: 48px;
+            font-family: times new roman;
+            color: #4E4E4E;
+            font-variant: small-caps;
+        }
+        #main{
+            width: 680px;
+            margin: 0px auto;
+        }
+        #tape{
+            background-image: url(../images/tape.png);
+            width: 625px;
+            height: 400px;
+            background-position: center center;
+            background-size: 100% 100%;
+        }
+
+        #lefthole{
+            width: 94px;
+            height: 94px;
+            position: relative;
+            left: 138px;
+            top: 130px;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-name: key1;
+            animation-duration: 1s;
+        }
+
+        #righthole{
+            width: 94px;
+            height: 94px;
+            position: relative;
+            left: 300px;
+            top: 130px;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-name: key1;
+            animation-duration: 1s;
+        }
+
+        #line{
+            width: 146px;
+            height: 72px;
+            background-image: url(../images/tapeline.png);
+            background-position: center center;
+            background-size: 100% 100%;
+            position: relative;
+            left: 239px;
+            top: 43px;
+            animation-name: key2;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function:linear;
+            animation-duration: 2s;
+        }
+
+        @keyframes key1 {
+            from {transform: rotate(0deg);}
+            to {transform: rotate(360deg);}
+        }
+
+        @keyframes key2 {
+            from {background-position : -50px;}
+            to { background-position : 50px;}
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="main">
+        <h1><i class="fas fa-headphones-alt"></i> Music</h1>
+        <div id="tape">
+            <img id="lefthole" src="../images/tapehole.png">
+            <img id="righthole" src="../images/tapehole.png">
+            <div id="line"></div>
+        </div>
+        <hr style="margin-top: 200px; border: 0px; border-top: 1px dashed white;">
+        <a href="../images/tape.zip" style="text-decoration: none; color: #4E4E4E;font-weight: bold;">Image Download</a>
+    </div>		
+        
+</body>
+</html>

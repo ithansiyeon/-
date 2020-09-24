@@ -1,0 +1,79 @@
+<!-- 단축키 : 아래에 있는 것들 수정하고 싶으면 ctrl + alt + 방향키 -->
+<!-- shift + alt + down 아래에 행 복사 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <style>
+		span{
+			display: inline-block;
+			color: #FFFFFF;
+			font-size: 112px;
+			font-variant: small-caps;
+			font-family: arial;
+			animation-name: key1;
+			animation-timing-function: ease-out;
+			animation-duration: 2.5s;
+			animation-fill-mode: forwards;
+			transform:translate(2000px,0px) rotate(0deg);
+		}
+		/* 각각으로 움직여야 인라인이라서 안되니까 display inline 블록으로 해서 */
+		html{
+			background-color: #222222;
+		}
+
+		#text {
+			margin: 360px auto;
+			text-align: center;
+			position: relative;
+			left: 0px;
+			top: 0px;
+			width: 895px;
+			/* border: 1px solid white; */
+			
+		}
+
+		@keyframes key1 {
+			from {transform: translate(20000px, 0px) rotate(0deg);}
+            to {transform: translate(0px, 0px) rotate(18000deg);}
+		}
+		
+		#text .fab.fa-html5{
+			color: gold;
+		}
+
+		 span:nth-child(1) { animation-delay: .15s; }
+		 span:nth-child(2) { animation-delay: .2s; }
+		 span:nth-child(3) { animation-delay: .3s; }
+		 span:nth-child(4) { animation-delay: .45s; }
+		 span:nth-child(5) { animation-delay: .6s; }
+         span:nth-child(6) { animation-delay: .75s; }
+	     span:nth-child(7) { animation-delay: .9s; }
+		 span:nth-child(8) { animation-delay: 1.05s; }
+		 span:nth-child(9) { animation-delay: 1.2s; }
+	     span:nth-child(10) { animation-delay: 1.35s; }
+         span:nth-child(11) { animation-delay: 1.5s; }
+		 span:nth-child(12) { animation-delay: 2s; }
+
+    </style>
+</head>
+<body>
+    <div id="text">
+        <span>H</span>
+		<span>e</span>
+		<span>l</span>
+		<span>l</span>
+		<span>o</span>
+		<span>!</span>
+		<span></span>
+		<span>H</span>
+		<span>T</span>
+		<span>M</span>
+		<span>L</span>
+		<span><i class="fab fa-html5"></i></span>
+	</div>          
+</body>
+</html>

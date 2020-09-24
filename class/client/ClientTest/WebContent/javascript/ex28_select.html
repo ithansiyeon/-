@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- ex28_select.html -->
+    <h1>셀렉트 박스</h1>
+    <select name="sel1" size="10" multiple>
+        <option value="1">강아지</option>
+        <option value="2">고양이</option>
+        <option value="3">병아리</option>
+        <option value="4">토끼</option>
+        <option value="5">거북이</option>
+        <option value="red">빨강</option>
+        <option value="blue">파랑</option>
+    </select>
+
+    <hr>
+    <input type="button" value="버튼1" name="btn1">
+    <input type="button" value="버튼2" name="btn2">
+    <input type="button" value="버튼3" name="btn3">
+    <input type="button" value="버튼4" name="btn4">
+    <input type="button" value="버튼5" name="btn5">
+
+
+    <script>
+        //<select>
+        // 1. sel1.value 읽기/쓰기
+        // 2. sel1.selectedIndex 읽기/쓰기
+        // 3. sel1.options 읽기/쓰기
+        
+        var sel1 = document.all.sel1;
+        var btn1 = document.all.btn1;
+        var btn2 = document.all.btn2;
+        var btn3 = document.all.btn3;
+        var btn4 = document.all.btn4;
+        var btn5 = document.all.btn5;
+
+        // 선택값이 유일할때만 쓸 수 있어 
+        btn1.onclick = function () {
+            //셀렉트 박스 > 선택한 값?
+            //읽기 
+            console.log(sel1.value);
+
+            //쓰기
+            //  sel1.value = "red"; //red라고만 하면 red하는 변수를 넣은 것이 돼, 이게 기본 선택 
+
+        };
+
+        btn2.onclick = function () {
+            //선택한 항목?
+            // - selectIndex > 선택된 옵션태그의 서수(index), 배열 인덱스
+            console.log(sel1.selectedIndex);
+            sel1.selectedIndex = 5; //빨강이 기본값
+
+        };
+
+        // 누군가의 자식으로 자동으로 들어가지 않아
+        btn3.onclick = function () {
+            //동적 제어 
+            // -> 변화 -> <option> 생성/수정/삭제 `
+
+            //<option> 생성 
+            var op = new Option(); // <option></option> 태그 생성, 기본적으로 제공되는 생성자 함수 
+            op.value = "yellow"; //html이 가지고 있는 속성은 얼마든지 접근 가능 <option value = "yellow">
+            op.text = "노랑"; // <option value = "yellow"> 노랑 </option>
+            // 메모리 상에 있어 
+
+            // '노랑'이 중복 추가 방지 
+            var isDuplicate = false;
+
+            for (var i = 0; i < sel1.options.length; i++) {
+                console.log(sel1.options[i].text, sel1.options[i].value);
+                if (sel1.options[i].text == "노랑" && sel1.options[i].value == "yellow") {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+            //<select>의 자식으로 <option>을 추가하기 
+            if (!isDuplicate) {
+                sel1.options.add(op);
+                // 집어 넣으면 계속 들어가 
+            }
+
+        };
+
+        btn4.onclick = function(){
+            //<option> 삭제 - 추가/삭제 -> index shift(***)
+            // sel1.options.remove(0);
+            sel1.options.remove(sel1.selectedIndex); // 선택된 index를 지워
+        }; // shift 됨
+
+        
+        btn5.onclick = function(){
+        // 다중 선택
+        for(var i=0;i<sel1.options.length;i++){
+            //<option selected> 기본적으로 선택되는 속성
+            console.log(sel1.options[i].selected); 
+            if(sel1.options[i].selected){
+                console.log(sel1.options[i].value);
+            }
+        }
+
+        };
+
+
+    </script>
+
+</body>
+
+</html>

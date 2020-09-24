@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #clock{
+            border: 20px dashed #999;
+            width:580px;
+            height: 580px;
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+        #main{
+            width: 800px;
+            margin: 100px auto;
+        }
+
+        #hour, #min, #sec {
+            border: 10px solid #999999;
+            border-radius: 100px;
+            width: 40px;
+            text-align: center;
+            /* transform: rotate(360000deg); */
+            transform-origin: center bottom;
+            transition-property: all;
+            padding-top: 20px;
+        }
+
+        #hour {
+            height: 100px;
+            background-color: tomato;
+            position: absolute;
+            left: 250px;
+            top: 150px;
+            transition-duration: 21600s;
+            transition-timing-function: linear;
+        }
+
+        #min {
+            height: 150px;
+            background-color: cornflowerblue;
+            position: absolute;
+            left: 250px;
+            top: 100px;
+            transition-duration: 360s;
+            transition-timing-function: linear;
+        }
+
+        #sec{
+            height: 200px;
+            background-color: yellow;
+            position: absolute;
+            left: 250px;
+            top: 50px;
+            transition-duration: 60s;
+            transition-timing-function: linear;
+        }
+
+        #clock:hover #hour{
+            transform: rotate(36000deg);
+        }
+        
+        #clock:hover #min{
+            transform: rotate(36000deg);
+        }
+
+        #clock:hover #sec{
+            transform: rotate(36000deg);
+        }
+        /* deg가 0을  */
+    </style>
+</head>
+<body>
+    
+ <div id="main">
+     <div id = "clock">
+     <div id="hour">Hour</div>
+     <div id="min">Min</div>
+     <div id="sec">Sec</div>
+    </div>
+ </div>
+
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // alert("하나"); //block 사용자가 확인 버튼 누르기 전까지 잠시 대기
+        // alert("둘");    //block
+        document.all.txt1.value = new Date();
+        // 에러
+        // 언어는 보통 독립적이지만 자바 스크립트 언어의 태생이 조작하기 위해서 만들어진 거라서 동시에 실행이 돼 선언된 변수가 아래에 있어서 에러가 난것 , 브라우저가 태그를 읽고 난 뒤에 조작을 해야 돼 
+    </script>
+</head>
+<body>
+    
+    <h1>자바스크립트 실행 순서(***)</h1>
+
+    <input type = "text" name = "txt1" size = "50">
+
+    <script>
+        // alert("셋");
+        // document.all.txt1.value = new Date(); //캘린더 
+
+    </script>
+</body>
+</html>

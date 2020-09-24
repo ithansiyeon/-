@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{ margin-bottom: 300px;}
+
+        .box {border: 1px solid black; width: 300px; height: 200px; margin: 20px;}
+
+        #box1 {border-radius: 100px;}
+        /* 더 짧은 축의 반을 넘어가면 안돼 */
+
+        /* 이미지가 원인건 border-radius */
+        #box2 {
+            height: 300px;
+            border-radius: 150px;
+        }
+
+        #box3{
+            border-top-left-radius: 150px;
+            border-bottom-right-radius: 150px;
+            border-top-right-radius: 50px;
+            border-bottom-left-radius: 50px;
+        }
+
+        #box4{
+            border-radius: 50%;
+        }
+        /* 직사각형일때: %는 타원 */
+
+        #box5{
+            border-radius: 100px;
+        }   
+
+        #list > img {
+            border-radius: 94px;
+        }
+
+        #list > img {
+            border-radius: 50%;
+        }
+
+        #list > img:hover{
+            border-radius: 0;
+        }
+
+        #txt1 {
+            border:1px solid gray;
+            outline: none;
+            border-radius: 100px;
+            padding: 4px 10px;
+        }
+
+        #btn1 {
+            margin-top: 50px;
+            /* 마진을 먹는게 폼 태그 */
+            border:0px solid gray;
+            background-color: cornflowerblue;
+            color: white;
+            border-radius: 3px;
+            /* width: 100px;
+            height: 30px; */
+
+            padding: 8px 45px;
+        }
+
+        #btn1:hover{
+            text-shadow: -1px -1px #666;
+            box-shadow: 1px 1px #666;
+        }
+
+        #tbl1 {
+            /* border: 1px solid gray; */
+            /* border-collapse: separate; */
+            width: 500px;
+            /* border-radius: 10px; */
+            /* border-spacing: 0px; */
+            /* 오른쪽과 왼쪽이 합쳐져서 진해져 */
+        }
+        /* border-radius는 collapse면 안 먹어 */
+        #tbl1 td {
+            border: 1px solid gray;
+            width: 100px;
+            padding: 5px;
+            /* border-radius: 10px; */
+        }
+
+        #tbl1 tr:first-child td:first-child{
+            /* background-color: gold; */
+            border-top-left-radius: 20px;
+        }
+
+        #tbl1 tr:first-child td:last-child{
+            /* background-color: gold; */
+            border-top-right-radius: 20px;
+        }     
+
+        #tbl1 tr:last-child td:first-child{
+            /* background-color: gold; */
+            border-bottom-left-radius: 20px;
+        }
+
+        #tbl1 tr:last-child td:last-child{
+            /* background-color: gold; */
+            border-bottom-right-radius: 20px;
+        }   
+
+    </style>
+</head>
+<body>
+    <!-- ex36_border.html -->
+    <div id="box1" class="box">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ratione repellat voluptatibus nobis quibusdam odit eveniet excepturi possimus qui magnam dolorem perspiciatis, modi aliquam, exercitationem deserunt quasi quisquam ea sed!</div>
+    <div id="box2" class="box">Porro illum perspiciatis aspernatur repudiandae, corporis doloremque sed hic quos labore qui voluptatibus accusantium odio vero rerum aut repellendus earum dolores officiis quidem. Amet, consequuntur ex repudiandae mollitia qui doloremque.</div>
+    <div id="box3" class="box">Id sequi aut quas consequatur facilis fugit animi quasi maxime? Minus natus quae numquam quibusdam unde? Ipsum similique dolores vero, ullam ipsa eius quia earum corporis! Neque dignissimos est sunt.</div>
+    <div id="box4" class="box">Libero, autem dicta. Voluptatibus odio maxime esse laudantium, a nihil! Ipsam veritatis impedit libero consectetur dignissimos officia fugit explicabo deserunt numquam, debitis itaque mollitia necessitatibus, ducimus est, ipsa voluptatibus voluptates.</div>
+    <div id="box5" class="box">Iste consectetur ad voluptates voluptas. Labore quos quisquam magni ratione tempora exercitationem, dicta impedit facere reprehenderit, totam possimus nobis inventore temporibus, sunt et! Exercitationem, quis suscipit consectetur rem repellendus doloribus.</div>
+
+    <div id = "list">
+        <img src="../images/dog01.jpg">
+        <img src="../images/dog02.jpg">
+        <img src="../images/dog03.jpg">
+        <img src="../images/dog04.jpg">
+        <img src="../images/dog05.jpg">
+    </div>
+
+    <h1>컨트롤</h1>
+
+    <div><input type = "text" id = "txt1"></div>
+    <div><input type = "button" id = "btn1" value = "Administrator Button"></div>
+
+    <h1>표</h1>
+
+    
+    <!-- table#tbl1>tr*20>td{data}*5 -->
+    <table id="tbl1">
+        <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+        </tr>
+        <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+        </tr>
+        <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+        </tr>
+        <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+        </tr>
+        <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+        </tr>
+        <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+        </tr>
+        <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+        </tr>
+        <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+        </tr>
+        <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+        </tr>
+        <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+        </tr>
+        <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+        </tr>
+        <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+        </tr>
+        <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+        </tr>
+        <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+        </tr>
+        <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+        </tr>
+        <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+        </tr>
+        <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+        </tr>
+        <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+        </tr>
+        <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+        </tr>
+        <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+        </tr>
+    </table>
+
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "css/jquery-ui.css">
+    <style>
+        #box3 {
+            border: 10px solid black;
+            width: 500px;
+            height: 300px;
+        }
+        /* #box3 {overflow: hidden;} */
+    </style>
+</head>
+<body>
+    <h1>jQuery UI</h1>
+    <ul>
+        <li>Interactions</li>
+        <li>Widgets</li>
+        <li>Effects</li>
+    </ul>
+    <img src = "../images/catty01.png" class = "cat">
+   
+    <hr>
+    
+   <img src = "../images/catty02.png" id = "cat2">
+
+   <hr>
+   <div id = "box3">
+    <img src="../images/catty03.png" id = "cat3" alt="">
+    </div>
+
+
+    <script src = "js/jquery-1.12.4.js"></script>
+    <script src = "js/jquery-ui.js"></script>
+    <script>
+
+        $(".cat").draggable();
+        $("h1,ul,li").draggable();
+
+        $("#cat2").draggable({
+            axis: "y",
+            grid: [128,128],
+            cursor:"move"
+            // 거리를 100씩 이동 좌우 위,아래 거리
+        });
+
+        // #box1 {overflow:hidden;}
+        $("#cat3").draggable({
+            // containment:"#box3" //벗어나갈 수 없어 
+            // containment:"parent" // 예약어
+           //snap: "#box3"
+			snap: "img"
+           
+        });
+
+
+    </script>
+
+  
+</body>
+</html>

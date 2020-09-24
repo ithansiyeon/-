@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border: 1px solid black;
+            width: 600px;
+            height: 130px;
+            margin: 80px 10px;
+            border-collapse: collapse;
+        }
+
+        .row1 {
+            border: 1px solid black;
+            font-weight: bold;
+            background: #EEEE;
+        }
+        .text1 {
+            width: 80px;
+            margin-left: 10px;
+        }
+        td{
+            border-bottom: 1px solid black;
+        }
+        .text2{
+            width: 60px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <form name = 'form1' autocomplete=off>
+        <tr>
+            <td style="text-align: center; width: 140px;" class = "row1">주민번호</td>
+            <td><input type="text" name="text1" class = "text1"> - <input type="text" name="text2" class="text1"></td>
+        </tr>
+        <tr>
+            <td style="text-align: center; width: 140px;" class = "row1">생년월일</td>
+            <td><input type="text" name="text3" class="text2"> 년 <input type="text" name="text4" class="text2"> 월 <input type="text" name="text5" class="text2"> 일</td>
+        </tr>
+        <tr>
+            <td style="text-align: center; width: 140px;" class = "row1">성별</td>
+            <!-- <td><input type="radio" id = "rb1" name="rb1">남자 <input type="radio" id = "rb2" name="rb2">여자</td> -->
+            <td><input type="radio" id = "rb1" name="gender">남자 <input type="radio" id = "rb2" name="gender">여자</td>
+        </tr>
+    </form>
+    </table>
+    <script>
+        var text1 = document.form1.text1;
+        var text2 = document.form1.text2;
+        var text3 = document.form1.text3;
+        var text4 = document.form1.text4;
+        var text5 = document.form1.text5;
+        var gender = document.form1.gender;
+        var ssn ="";
+        text1.onkeyup = function() {
+            ssn = text1.value;
+            //  console.log(ssn.length);
+             if(ssn.length==6){
+                text2.focus();
+                m1();
+             }
+        };
+
+        text2.onkeyup = function(){
+            var content1 = text2.value.substring(0,1);
+             console.log(text2.value);
+             if(parseInt(content1) % 2 == 1){
+                gender[0].checked=true;
+             } else if(content1=="2"){
+                gender[1].checked=true;
+             }
+        };
+
+        function m1(){
+                    text3.value = "19"+ssn.substring(0,2);
+                    text4.value = ssn.substring(2,4);
+                    text5.value = ssn.substring(4,6);
+                }
+    </script>
+</body>
+</html>

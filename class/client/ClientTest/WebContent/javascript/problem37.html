@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+       img {
+           position: absolute;
+           left: 0px;
+           top: 0px;
+           display: block;
+       }
+
+    #box{
+           position: relative;
+           width: 1000px;
+           height: 700px;
+           border: 10px solid black;
+           background-color: white;
+           margin: 100px auto;
+           overflow: hidden;
+       }
+       body{
+           background-color: #444444;
+       }
+
+   </style>
+</head>
+<body>
+      
+        <div id="box">
+            <img src="../images/catty01.png" class="cat" style="z-index: 21; left: 350px; top: 198px; display: block;">
+            <img src="../images/catty02.png" class="cat" style="z-index: 20; left: 354px; top: 203px; display: block;">
+            <img src="../images/catty03.png" class="cat" style="z-index: 19; left: 355px; top: 205px; display: block;">
+            <img src="../images/catty04.png" class="cat" style="z-index: 18; left: 359px; top: 208px; display: block;">
+            <img src="../images/catty05.png" class="cat" style="z-index: 17; left: 360px; top: 210px; display: block;">
+            <img src="../images/catty06.png" class="cat" style="z-index: 16; left: 361px; top: 211px; display: block;">
+            <img src="../images/catty07.png" class="cat" style="z-index: 15; left: 362px; top: 213px; display: block;">
+            <img src="../images/catty08.png" class="cat" style="z-index: 14; left: 364px; top: 214px; display: block;">
+            <img src="../images/catty09.png" class="cat" style="z-index: 13; left: 365px; top: 216px; display: block;">
+            <img src="../images/catty10.png" class="cat" style="z-index: 12; left: 365px; top: 217px; display: block;">
+            <img src="../images/catty11.png" class="cat" style="z-index: 11; left: 365px; top: 218px; display: block;">
+            <img src="../images/catty12.png" class="cat" style="z-index: 10; left: 366px; top: 218px; display: block;">
+            <img src="../images/catty13.png" class="cat" style="z-index: 9; left: 366px; top: 220px; display: block;">
+            <img src="../images/catty14.png" class="cat" style="z-index: 8; left: 369px; top: 222px; display: block;">
+            <img src="../images/catty15.png" class="cat" style="z-index: 7; left: 370px; top: 223px; display: block;">
+            <img src="../images/catty16.png" class="cat" style="z-index: 6; left: 371px; top: 225px; display: block;">
+            <img src="../images/catty17.png" class="cat" style="z-index: 5; left: 373px; top: 227px; display: block;">
+            <img src="../images/catty18.png" class="cat" style="z-index: 4; left: 373px; top: 228px; display: block;">
+            <img src="../images/catty19.png" class="cat" style="z-index: 3; left: 374px; top: 231px; display: block;">
+            <img src="../images/catty20.png" class="cat" style="z-index: 2; left: 389px; top: 163px; display: block;">
+            <img src="../images/catty21.png" class="cat" style="z-index: 1; left: 235px; top: 444px; display: block;">
+        </div>
+        <script>
+            var pathX = [];
+            var pathY = [];
+            var cat = document.getElementsByClassName("cat");
+            var box = document.getElementById("box");
+            window.onmousemove = function () {
+                    var x = event.clientX - 450;
+                    var y = event.clientY - 128 - 50;
+                    console.log(event.offsetX);
+                    console.log(event.offsetY);
+                        
+                    pathX.push(x);
+                    pathY.push(y);
+                    // console.log(pathX);
+                    // console.log(pathY);
+
+                    move();
+                    if (pathX.length > cat.length) { 
+                        for(var i=0;i<pathX.length;i++) {
+                        pathX.shift();
+                        pathY.shift();
+                        }
+                    } 
+     
+                    };
+            
+
+                function move() {
+                    if(pathX.length==cat.length) {
+                        for (var i = 0; i < pathX.length; i++) {
+                            cat[i].style.left = pathX[i]+"px";
+                            cat[i].style.top = pathY[i]+"px";
+                            cat[i].style.transitionDuration = 0.1 + "s";
+                        }
+                    }  
+                }
+
+            
+
+        </script>
+</body>
+</html>

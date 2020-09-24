@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="Author" content="in">
+	<meta name="Generator" content="Visual Studio Code">
+	<title>Question :: javascript PatternLock</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+	<link rel="stylesheet" href="basic.css">
+	<style>
+			</style>
+</head>
+<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
+
+	<style>
+	
+	img { border: 10px solid #A9A9A9; margin: 10px; }
+	input { border: 10px solid #A9A9A9; padding: 5px 70px; font-size: 1.7em;  margin: 10px 5px; }
+
+</style>
+<script>
+
+	
+	var list;
+	var pw = "";
+
+	window.onload = function() {
+		
+		list = document.images;
+
+		for (var i=0; i<list.length; i++) {
+			list[i].onmouseover = function() {
+				pw += getNum(event.srcElement.src);
+				event.srcElement.src = "../images/rect_icon10.png";
+			};
+		}
+
+	};
+	
+	function reset() {
+		for (var i=0; i<list.length; i++) {
+			list[i].src = "../images/rect_icon0" + (i+1) + ".png";
+		}
+		pw = "";
+	}
+
+	function input() {
+		if (pw == "14789") {
+			location.href = "http://google.com";
+		} else {
+			alert("Error!!");
+			reset();
+		}
+	}
+
+	function getNum(url) {
+		var index = url.lastIndexOf(".");
+		return url.substr(index-1, 1);
+	}
+	
+</script>
+
+<div class="main m600">
+	<div class="mainHeader">
+		<h1>Pattern Lock</h1>
+		<div>패턴을 그리고 입력 버튼을 누르시오.</div>
+		<ul>
+			<li>password : 'L'</li>
+		</ul>
+		<div class="code">document.images, img.onmouseover, dataset, location.href</div>
+	</div>
+	<div style="text-align: center;">
+		<img src="../images/rect_icon01.png">
+		<img src="../images/rect_icon02.png">
+		<img src="../images/rect_icon03.png"><br>
+		<img src="../images/rect_icon04.png">
+		<img src="../images/rect_icon05.png">		
+		<img src="../images/rect_icon06.png"><br>
+		<img src="../images/rect_icon07.png">
+		<img src="../images/rect_icon08.png">
+		<img src="../images/rect_icon09.png">
+	</div>
+	<div style="text-align: center;">
+		<input type="button" value="RESET" onclick="reset();">
+		<input type="button" value="INPUT" onclick="input();">
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script src="basic.js"></script>
+</body>
+</html>

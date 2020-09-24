@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            position: relative;
+            left: 0px;
+            top: 0px;
+            width: 500px;
+            height: 300px;
+            background-color: #EAEAEB;
+            margin: 0px auto;
+           
+        }
+
+        #circle1 {
+            width: 400px;
+            height: 260px;
+            background-color: #DA4D26;
+            margin: 20px auto;
+            border-radius: 50%;
+            position: absolute;
+            left: 50px;
+        }
+        
+        #circle2 {
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            border-radius: 50%;
+            margin: 5px auto;
+            transition-timing-function: linear;
+            position: absolute;
+            left: 100px;
+            transform-origin: center bottom;
+            transition: all 2s;
+            transition-delay: .2s;
+            transform-origin: center 125px;
+
+        }
+
+        #circle3 {
+            transition-timing-function: linear;
+            transform-origin: bottom bottom;
+            position: absolute;
+            top: 5px;
+            left: 50px;
+            width: 100px;
+            height: 100px;
+            background-color: #7B361A;
+            border-radius: 50%;
+            margin: 0px auto;
+            transition-delay: .2s;
+            transition: all 2s;
+        }
+        #top, #bottom {
+            position: absolute;
+            width: 400px;
+            height: 150px;
+            background-color: #D5491A;
+            transition: all .5s;
+        }
+
+        #top{
+            top:0px;
+            transform: translate(0px,-150px);
+        }
+
+        #bottom{
+            top:0px;
+            transform: translate(0px,300px);
+        }
+
+        #circle1:hover #circle2 {
+            transform: rotate(720deg);
+        }
+
+        #circle1:hover #circle3 {
+            transform: rotate(720deg);
+        }
+
+        #circle1{
+            overflow:hidden;
+        }
+        
+        #circle1:hover #top {
+            transition-delay: 1.8s;
+            transform: translate(0px, 0px);
+        }
+        
+        #circle1:hover #bottom {
+            transition-delay: 1.8s;
+            transform: translate(0px,150px);
+        }
+
+        /* 왜 절대위치를 쓰지?? */
+    </style>
+</head>
+
+<body>
+    <div style="width: 700px; margin: 30px auto;">
+        <h1 style="margin-top: 0px;">transition + transition-duration + transition-origin + position(absolute)</h1>
+        <div style="margin: 20px 0px; border-left: 3px dotted gray; padding-left: 10px;">
+            눈알..
+        </div>
+        <div id="box">
+                <div id="circle1">
+                        <div id="circle2">
+                            <div id="circle3"></div>
+                        </div>
+                        <div id = "top"></div>
+                        <div id = "bottom"></div>
+            </div>
+        </div>
+        
+        
+</body>
+
+</html>

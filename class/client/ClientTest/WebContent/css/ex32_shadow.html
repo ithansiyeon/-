@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         #p1:hover{
+            /* text-shadow:h-shadow v-shadow blur color */
+            text-shadow: 3px 3px 1px #777;
+        }
+        #p2 {
+            border: 1px solid white;
+        }
+        #p2:hover {
+            border: 1px solid #777;
+            box-shadow: 3px 3px 1px #777;
+        }
+
+        .icon:hover{
+            box-shadow: 0px 10px 5px #555;
+            /* display: inline-block; */
+            /* margin-top: -3px; */
+            transform: translate(0px,-5px);
+            /* 좀 덜 튀어나와, 메뉴 만들때나 목록때 쓰여 */
+        }
+        /* 인라인 마진이 안먹혀 */
+
+        /* #list li {
+            border: 1px solid white;
+        } */
+         
+        #list li:hover {
+            /* color:red; */
+            /* border: 1px solid red; */
+            /* 2px씩 늘어나 */
+            /* border: 10px solid red;  */
+            /* outline:10px solid red; */
+            /* 테두리 outline 객체 면적에 포함이 안돼, 겹치는 현상이 생겨, 면적을 자치 하는게 아니라서 
+            사방 4개를 줘야돼, outline은 특수상황에 쓰는 */
+        }
+        #box1, #box2{
+            border: 1px solid black;
+            width: 300px;
+            /* height: 20px; */
+            overflow:hidden;
+
+            white-space: nowrap;
+             /* 자동개행이 없어져 */
+
+            margin-bottom: 50px;
+        }
+        /* 게시판 */
+        #box1 { text-overflow: clip; }
+        #box2 { text-overflow: ellipsis; }
+
+    </style>
+</head>
+<body>
+    <!-- ex32_shadow.html -->
+    <!-- (p$p$>lorem)*3 -->
+    <p id="p1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis reiciendis a ut tempora sit. Cum accusamus esse vero laboriosam? Iste necessitatibus veritatis vitae minima est nisi, ipsam consequatur tempora aliquam.</p>
+    <p id="p2">Impedit dolorem sequi cupiditate eveniet eius pariatur eum minus sapiente excepturi nulla numquam dicta soluta tempora reiciendis accusantium quibusdam obcaecati id ipsa, saepe unde. Alias debitis omnis porro accusamus eum!</p>
+    <p id="p3">Eos molestiae optio distinctio quis. Quidem facere quos veniam deserunt esse suscipit autem necessitatibus pariatur qui repudiandae quisquam sunt omnis in fugiat sit, placeat sapiente, fugit facilis saepe delectus reprehenderit.</p>
+
+    <hr>
+
+    <img src = "../images/rect_icon01.png" class="icon">
+    <img src = "../images/rect_icon02.png" class="icon">
+    <img src = "../images/rect_icon03.png" class="icon">
+    <img src = "../images/rect_icon04.png" class="icon">
+    <img src = "../images/rect_icon05.png" class="icon">
+
+    <hr>
+
+    <h1>오늘의 할일</h1>
+
+    <ul id = "list">
+        <li >빨리 집에 가기</li>
+        <li >밥먹기</li>
+        <li >잠자기</li>
+        <li>쪼금 공부하기</li>
+    </ul>
+
+    <hr>
+
+    <div id = "box1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, atque?</div>
+    <div id = "box2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, blanditiis!</div>
+
+</body>
+</html>

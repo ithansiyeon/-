@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            display: block;
+            margin: 10px 10px;
+            background-color: #F0F0F0;
+            border: 1px solid black;
+            height: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form name = "form2">
+    <input type="buttom" name = "btn1" value = "서울시 강남구 역삼동">
+    <input type="buttom" name = "btn2" value = "서울시 강남구 대치동">
+    <input type="buttom" name = "btn3" value = "서울시 강남구 도곡동">
+</form>
+<script>
+     var btn1 = document.form2.btn1;
+     var btn2 = document.form2.btn2;
+     var btn3 = document.form2.btn3;
+    btn1.onclick = function () {
+        opener.document.form1.text1.value = "06232";
+        opener.document.form1.text2.value = "서울시 강남구 역삼동";
+    };
+
+    btn2.onclick = function () {
+        opener.document.form1.text1.value = "06291";
+        opener.document.form1.text2.value = "서울시 강남구 대치동";
+    };
+   btn3.onclick = function () {
+        opener.document.form1.text1.value = "06267";
+        opener.document.form1.text2.value = "서울시 강남구 도곡동";
+    };
+</script>
+</body>
+</html>

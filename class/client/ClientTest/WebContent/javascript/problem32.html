@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tbl1 {
+            border: 1px solid black;
+            width: 590px;
+            height: 590px;
+            border-collapse: collapse;
+        }
+
+        .cell {
+            border: 1px solid black;
+            width: 115px;
+            height: 115px;
+        }
+
+        img {
+            background-size: cover;
+            width: 115px;
+            height: 115px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+</div>
+<table id="tbl1">
+    <tr>
+        <td class="cell"><img src="../images/beer.png"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+    </tr>
+    <tr>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+    </tr>
+    <tr>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+    </tr>
+    <tr>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+    </tr>
+    <tr>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell"><img src="../images/catHome.png"></td>
+    </tr>
+</table>
+</div>
+
+<script>
+    var index = 1;
+    var tr = document.getElementsByTagName("tr");
+    var td = document.getElementsByTagName("td");
+    var timer = 0;
+    var rnd = -1;
+    // 0: 좌 1: 우 2: 상 3: 하
+    for(var i=0;i<tr.length;i++){
+        tr[i].firstElementChild.onclick = function() {
+            
+            if (timer == 0 && index<=24) {
+                 timer = setInterval(function () {
+                    if(index>=24){
+                        // console.log(1);
+                        clearInterval(timer);
+                        timer=0;
+                    }
+                    
+                    rnd = parseInt(Math.random(1)*5);
+                    console.log(rnd);
+                    clear();
+                    td[index].innerHTML= "<img src = '../images/catty14.png'>"; 
+                    if(rnd == 0){
+                        if(index == 1 || index == 5|| index == 10 || index == 15 || index == 20) {
+
+                        } else {
+                            index--;
+                        } 
+                    }
+
+                    
+                    if(rnd == 1){
+                        if(index == 4 || index == 9 || index == 14 || index == 19 || index == 24){
+
+                        }
+                     else {
+                        index++;
+                    }
+                    }
+
+                    if(rnd == 2) {
+                        if(index == 0 || index == 1 || index == 2 || index == 3 || index == 4 || index == 5) {
+
+                        } else {
+                            index-=5;
+                        }
+                    }
+
+                    if(rnd == 3){
+                        if(index == 20 || index == 21 || index == 22 || index == 23 || index == 24) {
+
+                        } else {
+                            index+=5;
+                        }
+                    }
+                   
+                },100);
+            } 
+            
+        };
+    }
+    
+    function clear() {
+            for (var i = 1; i < td.length-1; i++) {
+                td[i].innerHTML = "";
+            }
+        }
+
+</script>
+</body>
+</html>

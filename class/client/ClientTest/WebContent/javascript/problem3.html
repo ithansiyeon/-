@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         .d input{
+            width: 150px;
+            height: 40px;
+            background-color: #EEEEEE;
+            text-align: center;
+            margin: 7px;
+            border-radius: 5px;
+            font-weight: bold;
+            border: 1px solid #A9A9A9;
+            padding: 5px 10px;
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .sub {
+            width: 430px;
+            height: 250px;
+            text-align: center;
+            border-left: 1px solid #A9A9A9;
+        }
+
+        .box {
+            width: 600px;
+            border: 1px solid #A9A9A9;
+            border-collapse: collapse;
+            margin-left: 10px;
+        }
+       
+    </style>
+</head>
+<body>
+    <table class="box">
+        <tr class="d">
+            <td>
+                <input type="button" value="강아지1" name="btn1" data-index="0">
+                <input type="button" value="강아지2" name="btn2" data-index="1">
+                <input type="button" value="강아지3" name="btn3" data-index="2">
+                <input type="button" value="강아지4" name="btn4" data-index="3">
+                <input type="button" value="강아지5" name="btn5" data-index="4">
+            </td>
+           
+        <td class="sub">
+            <img src="../images/dog01.jpg" name="dog">
+        </td>
+    </table>
+    
+    <script>
+       
+        var list = [
+                ["dog01.jpg","dog01_big.jpg"], ["dog02.jpg","dog02_big.jpg"] ,
+                ["dog03.jpg","dog03_big.jpg"], ["dog04.jpg","dog04_big.jpg"]
+                , ["dog05.jpg","dog05_big.jpg"]
+            ];
+        // 다시: 클릭하면 이미지 크게 하지 못했음 
+        for(var i=1;i<=list.length;i++){
+            var btn = document.all["btn"+i];
+            btn.onclick = function(){
+                // console.log("../images/dog0"+i+"_big.jpg");
+                // window.open("../images/dog0"+i+"_big.jpg","Chrome","width=1600, height=200");
+                window.open("../images/"+list[event.srcElement.dataset["index"]][1],"Chrome","width=1400, height=1050");
+            };
+
+            btn.onmouseover = function () {
+                dog.src = "../images/"+list[event.srcElement.dataset["index"]][0];
+            };
+           
+
+        }
+
+    
+    </script>
+
+</body>
+</html>

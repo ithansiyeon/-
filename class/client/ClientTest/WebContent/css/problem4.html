@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #weather .item {
+            float: left;
+            /* padding-bottom: 20px; */
+            margin-top: 19px;
+            margin-bottom: 18px;
+            width: 80px;
+            border-right: 1px solid #EEE;
+            border: 1px solid black;
+            text-align: center;
+            /* item 안이 inline이라서 center로 맞추고 margin: auto로 하면 한 놈이 가운데로 가서 나머지 얘들이 옆으로 가, 
+            여기서는 꽉 차 있으면 움직일 수 있는 공간이 없어서 의미가 없어 */
+
+        }
+     
+        #weather .content {
+            width: 601.99px;
+            /* margin: auto; */
+            list-style: none;
+            margin: 0px auto;
+            margin-left: -45px;
+            margin-top: -10px;
+            /* border: 1px solid black; */
+        }
+
+        #weather .content :last-child {
+            border-right: 0px;
+        }
+
+        #weather .week {
+            margin-top: -1px;
+            margin-bottom: 12px;
+            padding-top: 2px;
+            font-size: 12px;
+            font-family: 돋움;
+            /* margin-left: 15px; */
+            margin-bottom: 10px;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        #weather .week #to {
+            background-color: green;
+            color: white;
+            font-size: 11px;
+            font-family: 돋움;
+            margin-left: 7px;
+            padding-right: 9px;
+            width: 22px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 30%;
+            width: 21px;
+        }
+
+       
+        #header {
+            margin-top: 20px;
+            margin-left: 20px;
+            font-family: '굴림';
+            font-size: 12px;
+            margin-bottom: 20px;
+            padding-right: 24px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        #weather {
+            border: 1px solid #EEE;
+            width: 580px;
+            padding-bottom: 30px;
+           
+        }
+
+        span>img {
+            width: 30px;
+            /* margin-left: 10px; */
+
+        }
+
+        .per {
+            font-size: 12px;
+            color: #41B5EE;
+            font-family: '돋움';
+            margin-left: 7px;
+        }
+
+
+        #weather .item .morning {
+            display: block;
+               /* margin-bottom: 8px; */
+        }
+
+        #weather .item .afternoon{
+            display: block;
+        }
+
+        #weather .dd {
+            font-size: 12px;
+            color: #424242;
+            font-family: tahoma;
+            width: 116px;
+            font-weight: bold;
+            padding-top: 15px;
+            text-align: center;
+        }
+
+        .d {
+            font-size: 11px;
+            font-family: 돋움;
+            color: #8F8F8F;
+            margin-left: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id=weather>
+        <h1 id="header">
+            주간날씨
+        </h1>
+        <ul class = "content">
+            <li class="item">
+                <span class="week">목<span id="to">오늘</span>
+                </span>
+                <span class="morning">
+                    <img src="../images/icon_wt_22.svg">
+                    <span class="per">70%</span>
+                </span>
+                <span class="afternoon">
+                    <img src="../images/icon_wt_22.svg">
+                    <span class="per">60%</span>
+                </span>
+                <div class="dd">
+                    <span>21&#176/25&#176</span>
+                </div>
+            </li>
+            <li class="item">
+                <span class="week">금<span class="d">내일</span>
+                </span>
+                <span class="morning">
+                    <img src="../images/icon_wt_22.svg">
+                    <span class="per">60%</span>
+                </span>
+                <span class="afternoon">
+                    <img src="../images/icon_wt_07.svg">
+                    <span class="per">30%</span>
+                </span>
+                <div class="dd">
+                    <span>21&#176/28&#176</span>
+                </div>
+            </li>
+
+            <li class="item">
+                <span class="week">토<span class="d">모레</span>
+                </span>
+                <span class="morning">
+                    <img src="../images/icon_wt_07.svg">
+                    <span class="per">30%</span>
+                </span>
+                <span class="afternoon">
+                    <img src="../images/icon_wt_05.svg">
+                    <span class="per">29%</span>
+                </span>
+                <div class="dd">
+                    <span>21&#176/25&#176</span>
+                </div>
+            </li>
+            <li class="item">
+                <span class="week">일<span class="d">6.28</span>
+                </span>
+                <span class="morning">
+                    <img src="../images/icon_wt_05.svg">
+                    <span class="per">30%</span>
+                </span>
+                <span class="afternoon">
+                    <img src="../images/icon_wt_09.svg">
+                    <span class="per">60%</span>
+                </span>
+                <div class="dd">
+                    <span>21&#176/31&#176</span>
+                </div>
+            </li>
+            <li class="item">
+                <span class="week">월<span class="d">6.29</span>
+                </span>
+                <span class="morning">
+                    <img src="../images/icon_wt_05.svg">
+                    <span class="per">30%</span>
+                </span>
+                <span class="afternoon">
+                    <img src="../images/icon_wt_09.svg">
+                    <span class="per">60%</span>
+                </span>
+                <div class="dd">
+                    <span>21&#176/29&#176</span>
+                </div>
+
+            </li>
+            <li style="clear: both;"></li>
+        </ul>
+        <div style="clear:both"></div>
+    </div>
+    </div>
+</body>
+
+</html>

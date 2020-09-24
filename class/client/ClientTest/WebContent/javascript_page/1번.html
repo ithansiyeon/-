@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="Author" content="in">
+	<meta name="Generator" content="Visual Studio Code">
+	<title>Question :: javascript 클릭카운트</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+	<link rel="stylesheet" href="basic.css">
+	<style>
+			</style>
+</head>
+<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
+
+	<style>
+	#txtNum {
+		font-size: 11em;
+		text-align: center;
+		font-weight: bold;
+		width: 210px;
+		border: 0px;
+	}
+</style>
+<script>
+	var n = 0;
+	var num01, num02;
+	var txtNum;
+	
+	window.onload = function() {
+		num01 = document.images["num01"];
+		num02 = document.images["num02"];
+		txtNum = document.all["txtNum"];
+	};
+	
+	window.onmousedown = function() {
+
+		if (event.buttons == 1) {
+			n++;
+			
+			num02.src = "../images/" + (n % 10) + ".png";
+			num01.src = "../images/" + (parseInt(n / 10)) + ".png";
+
+			txtNum.value = addZero(n % 100);
+		}
+	};
+
+	window.onkeydown = function() {
+		
+		if (event.keyCode == 38) {
+			n++;
+		} else if (event.keyCode == 40) {
+			n--;
+		}
+
+		num02.src = "../images/" + (n % 10) + ".png";
+		num01.src = "../images/" + (parseInt(n / 10)) + ".png";
+
+	};
+
+	function addZero(num) {
+		if (num < 10) return "0" + num;
+		else return num;
+}
+</script>
+
+<div class="main m800">
+	<div class="mainHeader">
+		<h1>클릭 카운트</h1>
+		<div>화면을 클릭하면 숫자를 증가시키시오.</div>
+		<ul>
+			<li>이미지 : 1.png ~ 9.png</li>
+			<li>전역 마우스 이벤트 : window.onmouedown</li>
+			<li>마우스 왼쪽 버튼에만 반응하도록 구현</li>
+			<li>최대 클릭 횟수 : 99</li>
+		</ul>
+		<div class="code">document.images, event.buttons, event.keyCode, parseInt()</div>
+	</div>
+	<div style="text-align: center;"><input type="text" name="txtNum" id="txtNum" readonly value="00"></div>
+	<div style="text-align: center; margin-top: 0px; display: block;">
+		<img src="../images/0.png" name="num01">
+		<img src="../images/0.png" name="num02">
+	</div>
+</div>
+
+
+
+
+
+	<script src="basic.js"></script>
+</body>
+</html>

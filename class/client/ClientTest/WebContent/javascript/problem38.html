@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		#tbl1 {
+			border: 1px black;
+			border-collapse: collapse;
+			margin: 50px auto;
+		}
+		.cell {
+			width: 120px;
+			height: 120px;
+			border: 1px solid black;
+		}
+		img{
+			display: block;
+			width: 120px;
+			height: 120px;
+		}
+		
+	</style>
+</head>
+<body>
+
+    <table id="tbl1">
+		<tbody><tr>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+		</tr>
+		<tr>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+		</tr>
+		<tr>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+		</tr>
+		<tr>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="230" style="background-color: rgb(230, 230, 230);"><img src="../images/dog-foot.png"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+		</tr>
+		<tr>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+			<td class="cell" data-color="255"></td>
+		</tr>
+	</tbody></table>
+</div>
+	<script>
+
+		var cell = document.getElementsByClassName("cell");
+		var n1;
+
+	for (var i = 0; i < cell.length; i++) {
+		cell[i].onmousedown = function () {
+			// console.log(1);
+			console.log(n1);
+			if (event.srcElement.nodeName == "TD") {
+				// 클릭한게 이미지가 아닐때 여야 되니까?? 그런가?? 
+				// 다시 누르면 img가 눌리니까..
+				// 가장 안쪽이 src element라서 
+				clear();
+				n1 = event.srcElement.dataset["color"];
+				n1 -= 23;
+				if(n1>0){
+				event.srcElement.dataset["color"] = n1
+				event.srcElement.style.backgroundColor = "rgb("+n1+","+ n1+","+ n1 +")";
+				// var img = document.createElement("img");
+				// img.setAttribute("src","../images/dog-foot.png");
+				// event.srcElement.appendChild(img);
+				event.srcElement.innerHTML = "<img src=../images/dog-foot.png>";
+				}
+			} else if (event.srcElement.dataset["color"] == 0) {
+				event.srcElement.onclick = null;
+			}
+		};
+	}
+	function clear() {
+			for (var i = 0; i < cell.length; i++) {
+				if (cell[i].hasChildNodes) {
+					console.log(1);
+					cell[i].innerHTML = "";
+					// 질문22: td의 자식을 지울 수 는 없나??
+				}
+			}
+		}
+
+
+	</script>
+
+</body>
+</html>
